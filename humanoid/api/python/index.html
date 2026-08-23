@@ -1,0 +1,6562 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Team documentation for the humanoid robot project">
+      
+      
+      
+        <link rel="canonical" href="https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../cpp/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Python API - Humanoid Robot</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Humanoid Robot" class="md-header__button md-logo" aria-label="Humanoid Robot" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Humanoid Robot
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Sensor-Fusion-and-Advanced-Control/Humanoid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    humanoid
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Humanoid Robot" class="md-nav__button md-logo" aria-label="Humanoid Robot" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Humanoid Robot
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Sensor-Fusion-and-Advanced-Control/Humanoid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    humanoid
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_api_standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_pinocchio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        humanoid_pinocchio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        robot_model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="robot_model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RobotModel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RobotModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.frame_names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.joint_names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.njoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        njoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.nq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nq
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.nv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.state_version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        state_version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.get_frame_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_frame_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.get_joint_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_joint_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.neutral_configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        neutral_configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.update--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.zero_acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        zero_acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.zero_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        zero_velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kinematics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KinematicsMixin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KinematicsMixin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin--conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.forward_kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        forward_kinematics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_classical_acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_classical_acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_jacobian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_jacobian
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_jacobian_dot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_jacobian_dot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_pose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inverse_kinematics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="inverse_kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_jacobian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_jacobian
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_jacobian_dot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_jacobian_dot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_pose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DynamicsMixin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DynamicsMixin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin--conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_forces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coriolis_forces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="coriolis_forces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_forces--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coriolis_matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="coriolis_matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.forward_dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        forward_dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="forward_dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.forward_dynamics--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.gravity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gravity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inverse_dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="inverse_dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_dynamics--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_mass_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inverse_mass_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.kinetic_energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kinetic_energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.mass_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mass_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.mechanical_energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mechanical_energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.nonlinear_effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nonlinear_effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.potential_energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        potential_energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_utils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        humanoid_utils
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_utils.filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.EKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.EKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.EKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.EKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF.reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.LKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.LKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.LKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.LKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRCKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SRCKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF.reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRUKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SRUKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF.reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.UKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.UKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.UKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.UKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.dcm_to_quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dcm_to_quaternion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dcm_to_quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.dcm_to_quaternion--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.dcm_to_quaternion--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.dcm_to_quaternion--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.euler321_to_quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        euler321_to_quaternion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="euler321_to_quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.euler321_to_quaternion--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.euler321_to_quaternion--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.normalize_quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalize_quaternion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="normalize_quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.normalize_quaternion--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.normalize_quaternion--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_dcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quaternion_to_dcm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="quaternion_to_dcm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_dcm--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_dcm--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_euler321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quaternion_to_euler321
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="quaternion_to_euler321">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_euler321--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_euler321--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_rotation_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quaternion_to_rotation_matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="quaternion_to_rotation_matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_rotation_matrix--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_rotation_matrix--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rotation_matrix_to_quaternion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rotation_matrix_to_quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mujoco_sim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mujoco_sim
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mujoco_sim.simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        simulator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="simulator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mujoco_sim.simulator.MujocoSim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MujocoSim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mujoco_sim.simulator.main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        main
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mujoco_sim.model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mujoco_sim.model.MujocoModelContext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MujocoModelContext
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mujoco_sim.telemetry.telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        telemetry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_rqt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        humanoid_rqt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_rqt.monitor_plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        monitor_plugin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="monitor_plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_rqt.monitor_plugin.HumanoidMonitorPlugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HumanoidMonitorPlugin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_pinocchio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        humanoid_pinocchio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        robot_model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="robot_model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RobotModel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RobotModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.frame_names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.joint_names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.njoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        njoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.nq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nq
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.nv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.state_version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        state_version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.get_frame_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_frame_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.get_joint_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_joint_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.neutral_configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        neutral_configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.update--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.zero_acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        zero_acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.robot_model.RobotModel.zero_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        zero_velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kinematics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KinematicsMixin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KinematicsMixin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin--conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.forward_kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        forward_kinematics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_classical_acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_classical_acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_jacobian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_jacobian
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_jacobian_dot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_jacobian_dot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_pose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frame_velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inverse_kinematics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="inverse_kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_jacobian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_jacobian
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_jacobian_dot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_jacobian_dot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_pose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        joint_velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DynamicsMixin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DynamicsMixin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin--conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_forces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coriolis_forces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="coriolis_forces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_forces--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coriolis_matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="coriolis_matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.forward_dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        forward_dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="forward_dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.forward_dynamics--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.gravity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gravity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inverse_dynamics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="inverse_dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_dynamics--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_mass_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inverse_mass_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.kinetic_energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kinetic_energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.mass_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mass_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.mechanical_energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mechanical_energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.nonlinear_effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nonlinear_effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_pinocchio.dynamics.DynamicsMixin.potential_energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        potential_energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_utils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        humanoid_utils
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_utils.filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.EKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.EKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.EKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.EKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF.reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.KF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.LKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.LKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.LKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.LKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRCKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SRCKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF.reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRCKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRUKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SRUKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF.reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.SRUKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.UKF" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UKF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UKF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.UKF.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.UKF.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.filters.UKF.update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.dcm_to_quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dcm_to_quaternion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="dcm_to_quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.dcm_to_quaternion--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.dcm_to_quaternion--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.dcm_to_quaternion--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.euler321_to_quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        euler321_to_quaternion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="euler321_to_quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.euler321_to_quaternion--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.euler321_to_quaternion--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.normalize_quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalize_quaternion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="normalize_quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.normalize_quaternion--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.normalize_quaternion--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_dcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quaternion_to_dcm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="quaternion_to_dcm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_dcm--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_dcm--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_euler321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quaternion_to_euler321
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="quaternion_to_euler321">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_euler321--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_euler321--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_rotation_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quaternion_to_rotation_matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="quaternion_to_rotation_matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_rotation_matrix--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.quaternion_to_rotation_matrix--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rotation_matrix_to_quaternion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rotation_matrix_to_quaternion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mujoco_sim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mujoco_sim
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mujoco_sim.simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        simulator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="simulator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mujoco_sim.simulator.MujocoSim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MujocoSim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mujoco_sim.simulator.main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        main
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mujoco_sim.model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mujoco_sim.model.MujocoModelContext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MujocoModelContext
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mujoco_sim.telemetry.telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        telemetry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_rqt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        humanoid_rqt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#humanoid_rqt.monitor_plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        monitor_plugin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="monitor_plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#humanoid_rqt.monitor_plugin.HumanoidMonitorPlugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HumanoidMonitorPlugin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h1>
+<h2 id="humanoid_pinocchio">humanoid_pinocchio<a class="headerlink" href="#humanoid_pinocchio" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="humanoid_pinocchio.robot_model" class="doc doc-heading">
+            <code>humanoid_pinocchio.robot_model</code>
+
+
+<a href="#humanoid_pinocchio.robot_model" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_pinocchio.robot_model.RobotModel" class="doc doc-heading">
+            <code>RobotModel</code>
+
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="KinematicsMixin (humanoid_pinocchio.kinematics.KinematicsMixin)" href="#humanoid_pinocchio.kinematics.KinematicsMixin">KinematicsMixin</a></code>, <code><span title="humanoid_pinocchio.centroidal.CentroidalMixin">CentroidalMixin</span></code>, <code><a class="autorefs autorefs-internal" title="DynamicsMixin (humanoid_pinocchio.dynamics.DynamicsMixin)" href="#humanoid_pinocchio.dynamics.DynamicsMixin">DynamicsMixin</a></code>, <code><span title="humanoid_pinocchio.snapshot.SnapshotMixin">SnapshotMixin</span></code></p>
+
+
+
+        <p>Central Pinocchio model interface for the MAX humanoid robot.</p>
+<p>The robot is modeled as a floating-base system.</p>
+<p>Responsibilities:
+- load the robot URDF
+- build the Pinocchio model
+- create and own the Pinocchio Data object
+- store the current robot state (q, v, a)
+- provide joint/frame information
+- provide the common model interface used by other modules</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.frame_names" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_names</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.frame_names" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all Pinocchio frame names.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.joint_names" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">joint_names</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.joint_names" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all Pinocchio joint names.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.njoints" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">njoints</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.njoints" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Number of joints in the Pinocchio model.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.nq" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">nq</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.nq" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Dimension of the configuration vector.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.nv" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">nv</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.nv" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Dimension of the generalized velocity vector.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.state_version" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">state_version</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.state_version" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the current state version.</p>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.get_frame_id" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_frame_id</span><span class="p">(</span><span class="n">frame_name</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.get_frame_id" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the Pinocchio ID of a frame.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.get_joint_id" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_joint_id</span><span class="p">(</span><span class="n">joint_name</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.get_joint_id" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the Pinocchio ID of a joint.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.neutral_configuration" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">neutral_configuration</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.neutral_configuration" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the neutral configuration of the robot.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">summary</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.summary" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return basic information about the robot model.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.update" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Update the current robot state.</p>
+<h6 id="humanoid_pinocchio.robot_model.RobotModel.update--parameters">Parameters<a class="headerlink" href="#humanoid_pinocchio.robot_model.RobotModel.update--parameters" title="Permanent link">&para;</a></h6>
+<p>q : array_like
+    Configuration vector with shape (nq,).</p>
+
+
+<details class="v-" open>
+  <summary>array_like, optional</summary>
+  <p>Generalized velocity vector with shape (nv,).
+If omitted, zero velocity is used.</p>
+</details>
+
+<details class="a-" open>
+  <summary>array_like, optional</summary>
+  <p>Generalized acceleration vector with shape (nv,).
+If omitted, zero acceleration is used.</p>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.zero_acceleration" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">zero_acceleration</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.zero_acceleration" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return a zero generalized acceleration vector.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.robot_model.RobotModel.zero_velocity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">zero_velocity</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.robot_model.RobotModel.zero_velocity" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return a zero generalized velocity vector.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="humanoid_pinocchio.kinematics" class="doc doc-heading">
+            <code>humanoid_pinocchio.kinematics</code>
+
+
+<a href="#humanoid_pinocchio.kinematics" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_pinocchio.kinematics.KinematicsMixin" class="doc doc-heading">
+            <code>KinematicsMixin</code>
+
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Kinematic computations for the robot model.</p>
+<p>All public methods operate on the current state stored in RobotModel.</p>
+<h5 id="humanoid_pinocchio.kinematics.KinematicsMixin--conventions">Conventions<a class="headerlink" href="#humanoid_pinocchio.kinematics.KinematicsMixin--conventions" title="Permanent link">&para;</a></h5>
+<p>Pose:
+    4x4 homogeneous transformation matrix.</p>
+
+
+<details class="spatial-vectors" open>
+  <summary>Spatial vectors</summary>
+  <p>[linear_x, linear_y, linear_z,
+ angular_x, angular_y, angular_z]</p>
+</details>
+
+<details class="jacobian" open>
+  <summary>Jacobian</summary>
+  <p>Shape (6, nv).</p>
+</details>
+
+<details class="default-reference-frame" open>
+  <summary>Default reference frame</summary>
+  <p>LOCAL_WORLD_ALIGNED</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.forward_kinematics" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">forward_kinematics</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.forward_kinematics" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Compute forward kinematics for the current state.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.frame_acceleration" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_acceleration</span><span class="p">(</span><span class="n">frame_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_acceleration" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return frame spatial acceleration as a 6D vector.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.frame_classical_acceleration" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_classical_acceleration</span><span class="p">(</span><span class="n">frame_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_classical_acceleration" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return frame classical acceleration as a 6D vector.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.frame_jacobian" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_jacobian</span><span class="p">(</span><span class="n">frame_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_jacobian" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the 6 x nv Jacobian of a frame.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.frame_jacobian_dot" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_jacobian_dot</span><span class="p">(</span><span class="n">frame_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_jacobian_dot" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return time derivative of the frame Jacobian.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.frame_pose" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_pose</span><span class="p">(</span><span class="n">frame_name</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_pose" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return world pose of a frame as a 4x4 homogeneous matrix.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.frame_position" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_position</span><span class="p">(</span><span class="n">frame_name</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_position" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return world position of a frame.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.frame_rotation" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_rotation</span><span class="p">(</span><span class="n">frame_name</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_rotation" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return world rotation matrix of a frame.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.frame_velocity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">frame_velocity</span><span class="p">(</span><span class="n">frame_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.frame_velocity" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return frame spatial velocity as a 6D vector.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">inverse_kinematics</span><span class="p">(</span><span class="n">frame_name</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">q0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s1">'position'</span><span class="p">,</span> <span class="n">active_joints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">freeze_floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">position_tolerance</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">orientation_tolerance</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">damping</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">,</span> <span class="n">enforce_joint_limits</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Solve iterative inverse kinematics for a robot frame.</p>
+<h6 id="humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--parameters">Parameters<a class="headerlink" href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--parameters" title="Permanent link">&para;</a></h6>
+<p>frame_name : str
+    Target frame.</p>
+
+
+<details class="target-" open>
+  <summary>target</summary>
+  <p>If task='position':
+    3D target position, 4x4 pose, or pin.SE3.</p>
+<p>If task='pose':
+    4x4 pose or pin.SE3.</p>
+</details>
+
+<details class="q0-" open>
+  <summary>array_like, optional</summary>
+  <p>Initial configuration. Defaults to the current RobotModel q.</p>
+</details>
+
+<details class="task-" open>
+  <summary>{'position', 'pose'}</summary>
+  <p>Position-only or full SE(3) inverse kinematics.</p>
+</details>
+
+<details class="active_joints-" open>
+  <summary>iterable of str, optional</summary>
+  <p>Joints allowed to move.</p>
+<p>By default, joints in the kinematic chain of the target
+frame are used, excluding the floating-base root joint.</p>
+</details>
+
+<details class="freeze_floating_base-" open>
+  <summary>bool</summary>
+  <p>Keep root_joint fixed by default.</p>
+</details>
+
+<details class="max_iterations-" open>
+  <summary>int</summary>
+  <p>Maximum CLIK iterations.</p>
+</details>
+
+<details class="position_tolerance-" open>
+  <summary>float</summary>
+  <p>Position convergence tolerance in meters.</p>
+</details>
+
+<details class="orientation_tolerance-" open>
+  <summary>float</summary>
+  <p>Orientation convergence tolerance in radians.</p>
+</details>
+
+<details class="step_size-" open>
+  <summary>float</summary>
+  <p>Integration step size.</p>
+</details>
+
+<details class="damping-" open>
+  <summary>float</summary>
+  <p>Damped least-squares regularization.</p>
+</details>
+
+<details class="enforce_joint_limits-" open>
+  <summary>bool</summary>
+  <p>Clamp scalar active joints to model position limits.</p>
+</details>        <h6 id="humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--returns">Returns<a class="headerlink" href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--returns" title="Permanent link">&para;</a></h6>
+<p>dict
+    {
+        'q': solution configuration,
+        'success': bool,
+        'iterations': int,
+        'task': str,
+        'active_joints': list,
+        'position_error': float,
+        'orientation_error': float or None,
+    }</p>
+<h6 id="humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--notes">Notes<a class="headerlink" href="#humanoid_pinocchio.kinematics.KinematicsMixin.inverse_kinematics--notes" title="Permanent link">&para;</a></h6>
+<p>This solver uses a dedicated Pinocchio Data object.
+RobotModel.q, v, a and the shared self.data are not modified.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.joint_acceleration" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">joint_acceleration</span><span class="p">(</span><span class="n">joint_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_acceleration" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return joint spatial acceleration as a 6D vector.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.joint_jacobian" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">joint_jacobian</span><span class="p">(</span><span class="n">joint_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_jacobian" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the 6 x nv Jacobian of a joint.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.joint_jacobian_dot" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">joint_jacobian_dot</span><span class="p">(</span><span class="n">joint_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_jacobian_dot" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return time derivative of the joint Jacobian.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.joint_pose" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">joint_pose</span><span class="p">(</span><span class="n">joint_name</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_pose" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return world pose of a joint as a 4x4 homogeneous matrix.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.joint_position" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">joint_position</span><span class="p">(</span><span class="n">joint_name</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_position" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return world position of a joint.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.joint_rotation" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">joint_rotation</span><span class="p">(</span><span class="n">joint_name</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_rotation" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return world rotation matrix of a joint.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.kinematics.KinematicsMixin.joint_velocity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">joint_velocity</span><span class="p">(</span><span class="n">joint_name</span><span class="p">,</span> <span class="n">reference_frame</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.kinematics.KinematicsMixin.joint_velocity" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return joint spatial velocity as a 6D vector.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="humanoid_pinocchio.dynamics" class="doc doc-heading">
+            <code>humanoid_pinocchio.dynamics</code>
+
+
+<a href="#humanoid_pinocchio.dynamics" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_pinocchio.dynamics.DynamicsMixin" class="doc doc-heading">
+            <code>DynamicsMixin</code>
+
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Rigid-body dynamics computations for the robot.</p>
+<p>All computations use the current state stored in RobotModel.</p>
+<h5 id="humanoid_pinocchio.dynamics.DynamicsMixin--conventions">Conventions<a class="headerlink" href="#humanoid_pinocchio.dynamics.DynamicsMixin--conventions" title="Permanent link">&para;</a></h5>
+<p>Mass matrix:
+    Shape (nv, nv)</p>
+
+
+<details class="generalized-forces" open>
+  <summary>Generalized forces</summary>
+  <p>Shape (nv,)</p>
+</details>
+
+<details class="dynamic-equation" open>
+  <summary>Dynamic equation</summary>
+  <p>tau = M(q) @ a + nle(q, v)</p>
+</details>
+
+<details class="where" open>
+  <summary>where</summary>
+  <p>nle(q, v) = Coriolis/centrifugal effects + gravity</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_forces" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">coriolis_forces</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_forces" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return Coriolis and centrifugal generalized forces.</p>
+<p>c(q, v) = C(q, v) @ v</p>
+<h6 id="humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_forces--returns">Returns<a class="headerlink" href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_forces--returns" title="Permanent link">&para;</a></h6>
+<p>numpy.ndarray
+    Generalized Coriolis/centrifugal force vector
+    with shape (nv,).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">coriolis_matrix</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the Coriolis matrix C(q, v).</p>
+<p>The rigid-body dynamics equation is:</p>
+<div class="highlight"><pre><span></span><code>tau = M(q) @ a + C(q, v) @ v + g(q)
+</code></pre></div>
+<h6 id="humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix--notes">Notes<a class="headerlink" href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix--notes" title="Permanent link">&para;</a></h6>
+<p>Pinocchio's computeCoriolisMatrix() modifies several fields
+of its Data object. Therefore, a dedicated Data object is used
+here so that computing C(q, v) does not corrupt cached
+kinematic or centroidal quantities stored in self.data.</p>
+<h6 id="humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix--returns">Returns<a class="headerlink" href="#humanoid_pinocchio.dynamics.DynamicsMixin.coriolis_matrix--returns" title="Permanent link">&para;</a></h6>
+<p>numpy.ndarray
+    Coriolis matrix with shape (nv, nv).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.forward_dynamics" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">forward_dynamics</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.forward_dynamics" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Compute generalized acceleration using ABA.</p>
+<h6 id="humanoid_pinocchio.dynamics.DynamicsMixin.forward_dynamics--parameters">Parameters<a class="headerlink" href="#humanoid_pinocchio.dynamics.DynamicsMixin.forward_dynamics--parameters" title="Permanent link">&para;</a></h6>
+<p>tau : array_like
+    Generalized force vector with shape (nv,).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.gravity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">gravity</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.gravity" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return generalized gravity vector g(q).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.inverse_dynamics" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">inverse_dynamics</span><span class="p">(</span><span class="n">acceleration</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_dynamics" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Compute generalized forces using RNEA.</p>
+<p>tau = M(q) @ a + nle(q, v)</p>
+<h6 id="humanoid_pinocchio.dynamics.DynamicsMixin.inverse_dynamics--parameters">Parameters<a class="headerlink" href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_dynamics--parameters" title="Permanent link">&para;</a></h6>
+<p>acceleration : array_like, optional
+    Generalized acceleration.
+    If omitted, the current RobotModel acceleration is used.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.inverse_mass_matrix" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">inverse_mass_matrix</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.inverse_mass_matrix" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return inverse joint-space inertia matrix M(q)^-1.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.kinetic_energy" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">kinetic_energy</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.kinetic_energy" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return kinetic energy of the robot.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.mass_matrix" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mass_matrix</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.mass_matrix" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return joint-space inertia matrix M(q).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.mechanical_energy" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mechanical_energy</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.mechanical_energy" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return total mechanical energy.</p>
+<p>mechanical = kinetic + potential</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.nonlinear_effects" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">nonlinear_effects</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.nonlinear_effects" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return nonlinear effects vector nle(q, v).</p>
+<p>Includes:
+- Coriolis effects
+- centrifugal effects
+- gravity</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_pinocchio.dynamics.DynamicsMixin.potential_energy" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">potential_energy</span><span class="p">()</span></code>
+
+<a href="#humanoid_pinocchio.dynamics.DynamicsMixin.potential_energy" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return gravitational potential energy of the robot.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="humanoid_utils">humanoid_utils<a class="headerlink" href="#humanoid_utils" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="humanoid_utils.filters" class="doc doc-heading">
+            <code>humanoid_utils.filters</code>
+
+
+<a href="#humanoid_utils.filters" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>State-estimation filters.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_utils.filters.EKF" class="doc doc-heading">
+            <code>EKF</code>
+
+
+<a href="#humanoid_utils.filters.EKF" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="KF (humanoid_utils.filters.kf.KF)" href="#humanoid_utils.filters.KF">KF</a></code></p>
+
+
+
+        <p>Discrete-time Extended Kalman Filter.</p>
+<p>The filter follows the nonlinear model</p>
+<div class="highlight"><pre><span></span><code>x_k = f(x_{k-1}, ...)
+z_k = h(x_k, ...)
+</code></pre></div>
+<p>with covariance propagation based on the Jacobians F, L, H, and M.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.EKF.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.EKF.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the Extended Kalman Filter.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>x0</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initial state estimate.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>P0</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initial estimation-error covariance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>f</code>
+            </td>
+            <td>
+                  <code><span title="typing.Callable">Callable</span>[..., <span title="typing.Any">Any</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Discrete nonlinear process model.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>F</code>
+            </td>
+            <td>
+                  <code><span title="humanoid_utils.filters.ekf.Model">Model</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>State Jacobian of the process model.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>Q</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Process-noise covariance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>L</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="humanoid_utils.filters.ekf.Model">Model</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Process-noise Jacobian/gain matrix. If None,
+additive process noise is assumed and L = I.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.EKF.predict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.EKF.predict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the EKF prediction step.</p>
+<p>Computes</p>
+<div class="highlight"><pre><span></span><code>x^- = f(x^+, ...)
+P^- = F P^+ F^T + L Q L^T
+</code></pre></div>
+<p>Additional positional and keyword arguments are forwarded to
+the process model and its Jacobians.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.EKF.update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">residual</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.EKF.update" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the EKF measurement-update step.</p>
+<p>Computes</p>
+<div class="highlight"><pre><span></span><code>innovation = z - h(x^-)
+S = H P^- H^T + M R M^T
+K = P^- H^T S^-1
+x^+ = x^- + K innovation
+</code></pre></div>
+<p>The covariance is updated using the Joseph stabilized form.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>z</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Measurement vector.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>h</code>
+            </td>
+            <td>
+                  <code><span title="typing.Callable">Callable</span>[..., <span title="typing.Any">Any</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nonlinear measurement model.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>H</code>
+            </td>
+            <td>
+                  <code><span title="humanoid_utils.filters.ekf.Model">Model</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Measurement-model state Jacobian.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>R</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Measurement-noise covariance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>M</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="humanoid_utils.filters.ekf.Model">Model</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Measurement-noise Jacobian/gain matrix. If None,
+additive measurement noise is assumed and M = I.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>residual</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Callable">Callable</span>[..., <span title="typing.Any">Any</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional custom residual function. This is useful
+for quantities such as wrapped angles.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Additional positional and keyword arguments are forwarded to
+h, H, and M.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_utils.filters.KF" class="doc doc-heading">
+            <code>KF</code>
+
+
+<a href="#humanoid_utils.filters.KF" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="abc.ABC">ABC</span></code></p>
+
+
+
+        <p>Abstract base class for Kalman-family filters.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.KF.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.KF.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the filter state and covariance.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.KF.predict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+<a href="#humanoid_utils.filters.KF.predict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the prediction step.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.KF.reset" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">reset</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.KF.reset" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reset the filter to a new initial state and covariance.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.KF.update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+<a href="#humanoid_utils.filters.KF.update" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the measurement-update step.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_utils.filters.LKF" class="doc doc-heading">
+            <code>LKF</code>
+
+
+<a href="#humanoid_utils.filters.LKF" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="KF (humanoid_utils.filters.kf.KF)" href="#humanoid_utils.filters.KF">KF</a></code></p>
+
+
+
+        <p>Discrete-time Linear Kalman Filter.</p>
+<p>The filter follows the linear model</p>
+<div class="highlight"><pre><span></span><code>x_k = F x_{k-1} + G u_{k-1} + w_{k-1}
+z_k = H x_k + v_k
+</code></pre></div>
+<p>with</p>
+<div class="highlight"><pre><span></span><code>w ~ (0, Q)
+v ~ (0, R)
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.LKF.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.LKF.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the Linear Kalman Filter.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>x0</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initial state estimate.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>P0</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initial estimation-error covariance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>F</code>
+            </td>
+            <td>
+                  <code><span title="humanoid_utils.filters.lkf.Model">Model</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>State-transition matrix.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>Q</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Process-noise covariance.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>G</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="humanoid_utils.filters.lkf.Model">Model</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional control-input matrix.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.LKF.predict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.LKF.predict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the LKF prediction step.</p>
+<p>Computes</p>
+<div class="highlight"><pre><span></span><code>x^- = F x^+ + G u
+P^- = F P^+ F^T + Q
+</code></pre></div>
+<p>If no control input is used:</p>
+<div class="highlight"><pre><span></span><code>x^- = F x^+
+</code></pre></div>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.LKF.update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.LKF.update" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the LKF measurement-update step.</p>
+<p>Computes</p>
+<div class="highlight"><pre><span></span><code>innovation = z - H x^-
+S = H P^- H^T + R
+K = P^- H^T S^-1
+x^+ = x^- + K innovation
+</code></pre></div>
+<p>The covariance is updated using the Joseph form.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_utils.filters.SRCKF" class="doc doc-heading">
+            <code>SRCKF</code>
+
+
+<a href="#humanoid_utils.filters.SRCKF" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="KF (humanoid_utils.filters.kf.KF)" href="#humanoid_utils.filters.KF">KF</a></code></p>
+
+
+
+        <p>Discrete-time Square-root Cubature Kalman Filter.</p>
+<p>This implementation follows the SRCKF formulation used in the
+supplied MATLAB Q3 exercise.</p>
+<p>The filter uses 2n cubature points</p>
+<div class="highlight"><pre><span></span><code>zeta = sqrt(n) * [I, -I]
+</code></pre></div>
+<p>and stores a lower-triangular square-root covariance factor</p>
+<div class="highlight"><pre><span></span><code>P = sqrt_P @ sqrt_P.T
+</code></pre></div>
+<p>Process and measurement noises are assumed additive.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.SRCKF.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">state_mean</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">state_residual</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.SRCKF.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the Square-root Cubature Kalman Filter.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.SRCKF.predict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.SRCKF.predict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the SRCKF time-update step.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.SRCKF.reset" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">reset</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.SRCKF.reset" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reset state and square-root covariance.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.SRCKF.update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">residual</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">measurement_mean</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.SRCKF.update" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the SRCKF measurement-update step.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_utils.filters.SRUKF" class="doc doc-heading">
+            <code>SRUKF</code>
+
+
+<a href="#humanoid_utils.filters.SRUKF" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="UKF (humanoid_utils.filters.ukf.UKF)" href="#humanoid_utils.filters.UKF">UKF</a></code></p>
+
+
+
+        <p>Square-root UKF following the MATLAB Q3 SRUKF-style algorithm.</p>
+<p>The filter stores a lower-triangular square-root covariance factor
+<code>sqrt_P</code> such that</p>
+<div class="highlight"><pre><span></span><code>P = sqrt_P @ sqrt_P.T
+</code></pre></div>
+<p>For consistency with the supplied MATLAB implementation, covariance
+matrices are reconstructed during prediction and update and are then
+re-factorized using a numerically safe Cholesky decomposition.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.SRUKF.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">kappa</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">state_mean</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">state_residual</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.SRUKF.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the square-root UKF.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.SRUKF.predict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.SRUKF.predict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the SRUKF prediction step.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.SRUKF.reset" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">reset</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.SRUKF.reset" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reset state, covariance, and square-root covariance.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.SRUKF.update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">residual</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">measurement_mean</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.SRUKF.update" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the SRUKF measurement-update step.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_utils.filters.UKF" class="doc doc-heading">
+            <code>UKF</code>
+
+
+<a href="#humanoid_utils.filters.UKF" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="KF (humanoid_utils.filters.kf.KF)" href="#humanoid_utils.filters.KF">KF</a></code></p>
+
+
+
+        <p>Discrete-time Unscented Kalman Filter.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.UKF.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">P0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">kappa</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">state_mean</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">state_residual</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.UKF.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the Unscented Kalman Filter.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.UKF.predict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.UKF.predict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the UKF prediction step.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="humanoid_utils.filters.UKF.update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">residual</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">measurement_mean</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.filters.UKF.update" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Perform the UKF measurement-update step.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="humanoid_utils.rotations" class="doc doc-heading">
+            <code>humanoid_utils.rotations</code>
+
+
+<a href="#humanoid_utils.rotations" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Rotation and attitude utilities.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="humanoid_utils.rotations.dcm_to_quaternion" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">dcm_to_quaternion</span><span class="p">(</span><span class="n">T</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.rotations.dcm_to_quaternion" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Convert a 3x3 DCM to a scalar-first quaternion.</p>
+<h5 id="humanoid_utils.rotations.dcm_to_quaternion--parameters">Parameters<a class="headerlink" href="#humanoid_utils.rotations.dcm_to_quaternion--parameters" title="Permanent link">&para;</a></h5>
+<p>T : array-like, shape (3, 3)
+    Direction cosine / transformation matrix using the same
+    convention as quaternion_to_dcm().</p>
+<h5 id="humanoid_utils.rotations.dcm_to_quaternion--returns">Returns<a class="headerlink" href="#humanoid_utils.rotations.dcm_to_quaternion--returns" title="Permanent link">&para;</a></h5>
+<p>numpy.ndarray, shape (4,)
+    Unit quaternion in scalar-first form:</p>
+<div class="highlight"><pre><span></span><code>    [q0, q1, q2, q3]
+</code></pre></div>
+<h5 id="humanoid_utils.rotations.dcm_to_quaternion--notes">Notes<a class="headerlink" href="#humanoid_utils.rotations.dcm_to_quaternion--notes" title="Permanent link">&para;</a></h5>
+<p>In this convention:</p>
+<div class="highlight"><pre><span></span><code>T = R.T
+</code></pre></div>
+<p>where R is the rotation matrix used by
+quaternion_to_rotation_matrix().</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="humanoid_utils.rotations.euler321_to_quaternion" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">euler321_to_quaternion</span><span class="p">(</span><span class="n">euler_rpy</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.rotations.euler321_to_quaternion" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Convert 3-2-1 Euler angles to a scalar-first quaternion.</p>
+<h5 id="humanoid_utils.rotations.euler321_to_quaternion--parameters">Parameters<a class="headerlink" href="#humanoid_utils.rotations.euler321_to_quaternion--parameters" title="Permanent link">&para;</a></h5>
+<p>euler_rpy : array-like, shape (3,)
+    Euler angles in radians:</p>
+<div class="highlight"><pre><span></span><code>    [roll, pitch, yaw]
+
+where:
+    roll  = phi
+    pitch = theta
+    yaw   = psi
+</code></pre></div>
+<h5 id="humanoid_utils.rotations.euler321_to_quaternion--returns">Returns<a class="headerlink" href="#humanoid_utils.rotations.euler321_to_quaternion--returns" title="Permanent link">&para;</a></h5>
+<p>numpy.ndarray, shape (4,)
+    Unit quaternion in scalar-first form:</p>
+<div class="highlight"><pre><span></span><code>    [q0, q1, q2, q3]
+</code></pre></div>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="humanoid_utils.rotations.normalize_quaternion" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">normalize_quaternion</span><span class="p">(</span><span class="n">q</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.rotations.normalize_quaternion" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return a normalized scalar-first quaternion.</p>
+<h5 id="humanoid_utils.rotations.normalize_quaternion--parameters">Parameters<a class="headerlink" href="#humanoid_utils.rotations.normalize_quaternion--parameters" title="Permanent link">&para;</a></h5>
+<p>q : array-like, shape (4,)
+    Quaternion in scalar-first form:</p>
+<div class="highlight"><pre><span></span><code>    [q0, q1, q2, q3]
+</code></pre></div>
+<h5 id="humanoid_utils.rotations.normalize_quaternion--returns">Returns<a class="headerlink" href="#humanoid_utils.rotations.normalize_quaternion--returns" title="Permanent link">&para;</a></h5>
+<p>numpy.ndarray, shape (4,)
+    Unit quaternion.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="humanoid_utils.rotations.quaternion_to_dcm" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">quaternion_to_dcm</span><span class="p">(</span><span class="n">q</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.rotations.quaternion_to_dcm" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Convert a scalar-first quaternion to a DCM.</p>
+<p>This implements the transformation matrix T from Eq. (350)
+of the lecture notes and matches the supplied MATLAB
+quaternion_to_dcm() function.</p>
+<h5 id="humanoid_utils.rotations.quaternion_to_dcm--parameters">Parameters<a class="headerlink" href="#humanoid_utils.rotations.quaternion_to_dcm--parameters" title="Permanent link">&para;</a></h5>
+<p>q : array-like, shape (4,)
+    Quaternion [q0, q1, q2, q3].</p>
+<h5 id="humanoid_utils.rotations.quaternion_to_dcm--returns">Returns<a class="headerlink" href="#humanoid_utils.rotations.quaternion_to_dcm--returns" title="Permanent link">&para;</a></h5>
+<p>numpy.ndarray, shape (3, 3)
+    Direction cosine / transformation matrix T.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="humanoid_utils.rotations.quaternion_to_euler321" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">quaternion_to_euler321</span><span class="p">(</span><span class="n">q</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.rotations.quaternion_to_euler321" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Convert a scalar-first quaternion to 3-2-1 Euler angles.</p>
+<p>The returned order is:</p>
+<div class="highlight"><pre><span></span><code>[roll, pitch, yaw]
+</code></pre></div>
+<p>corresponding to:</p>
+<div class="highlight"><pre><span></span><code>roll  = phi
+pitch = theta
+yaw   = psi
+</code></pre></div>
+<h5 id="humanoid_utils.rotations.quaternion_to_euler321--parameters">Parameters<a class="headerlink" href="#humanoid_utils.rotations.quaternion_to_euler321--parameters" title="Permanent link">&para;</a></h5>
+<p>q : array-like, shape (4,)
+    Quaternion [q0, q1, q2, q3].</p>
+<h5 id="humanoid_utils.rotations.quaternion_to_euler321--returns">Returns<a class="headerlink" href="#humanoid_utils.rotations.quaternion_to_euler321--returns" title="Permanent link">&para;</a></h5>
+<p>numpy.ndarray, shape (3,)
+    Euler angles [roll, pitch, yaw] in radians.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="humanoid_utils.rotations.quaternion_to_rotation_matrix" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">quaternion_to_rotation_matrix</span><span class="p">(</span><span class="n">q</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.rotations.quaternion_to_rotation_matrix" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Convert a scalar-first quaternion to a 3x3 rotation matrix.</p>
+<p>This implements the rotation tensor R given in Eq. (348)
+of the lecture notes.</p>
+<h5 id="humanoid_utils.rotations.quaternion_to_rotation_matrix--parameters">Parameters<a class="headerlink" href="#humanoid_utils.rotations.quaternion_to_rotation_matrix--parameters" title="Permanent link">&para;</a></h5>
+<p>q : array-like, shape (4,)
+    Quaternion [q0, q1, q2, q3].</p>
+<h5 id="humanoid_utils.rotations.quaternion_to_rotation_matrix--returns">Returns<a class="headerlink" href="#humanoid_utils.rotations.quaternion_to_rotation_matrix--returns" title="Permanent link">&para;</a></h5>
+<p>numpy.ndarray, shape (3, 3)
+    Rotation matrix R.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="humanoid_utils.rotations.rotation_matrix_to_quaternion" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rotation_matrix_to_quaternion</span><span class="p">(</span><span class="n">R</span><span class="p">)</span></code>
+
+<a href="#humanoid_utils.rotations.rotation_matrix_to_quaternion" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Convert a 3x3 rotation matrix to a scalar-first quaternion.</p>
+<h5 id="humanoid_utils.rotations.rotation_matrix_to_quaternion--parameters">Parameters<a class="headerlink" href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--parameters" title="Permanent link">&para;</a></h5>
+<p>R : array-like, shape (3, 3)
+    Rotation matrix using the same convention as
+    quaternion_to_rotation_matrix().</p>
+<h5 id="humanoid_utils.rotations.rotation_matrix_to_quaternion--returns">Returns<a class="headerlink" href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--returns" title="Permanent link">&para;</a></h5>
+<p>numpy.ndarray, shape (4,)
+    Unit quaternion:</p>
+<div class="highlight"><pre><span></span><code>    [q0, q1, q2, q3]
+</code></pre></div>
+<h5 id="humanoid_utils.rotations.rotation_matrix_to_quaternion--notes">Notes<a class="headerlink" href="#humanoid_utils.rotations.rotation_matrix_to_quaternion--notes" title="Permanent link">&para;</a></h5>
+<p>q and -q represent the same physical rotation. This function
+selects a representation with non-negative q0 when possible.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="mujoco_sim">mujoco_sim<a class="headerlink" href="#mujoco_sim" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="mujoco_sim.simulator" class="doc doc-heading">
+            <code>mujoco_sim.simulator</code>
+
+
+<a href="#mujoco_sim.simulator" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>ROS 2 node for running the MuJoCo humanoid simulator.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="mujoco_sim.simulator.MujocoSim" class="doc doc-heading">
+            <code>MujocoSim</code>
+
+
+<a href="#mujoco_sim.simulator.MujocoSim" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="rclpy.node.Node">Node</span></code></p>
+
+
+
+        <p>Run the MuJoCo simulation and expose its ROS 2 interface.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mujoco_sim.simulator.main" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#mujoco_sim.simulator.main" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Run the MuJoCo simulator node.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="mujoco_sim.model" class="doc doc-heading">
+            <code>mujoco_sim.model</code>
+
+
+<a href="#mujoco_sim.model" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>MuJoCo model loading and cached model metadata.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="mujoco_sim.model.MujocoModelContext" class="doc doc-heading">
+            <code>MujocoModelContext</code>
+
+
+<a href="#mujoco_sim.model.MujocoModelContext" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Load the MuJoCo model and cache frequently used metadata.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="mujoco_sim.telemetry.telemetry" class="doc doc-heading">
+            <code>mujoco_sim.telemetry.telemetry</code>
+
+
+<a href="#mujoco_sim.telemetry.telemetry" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>MuJoCo telemetry orchestration.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="humanoid_rqt">humanoid_rqt<a class="headerlink" href="#humanoid_rqt" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="humanoid_rqt.monitor_plugin" class="doc doc-heading">
+            <code>humanoid_rqt.monitor_plugin</code>
+
+
+<a href="#humanoid_rqt.monitor_plugin" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>RQt plugin for humanoid monitoring.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="humanoid_rqt.monitor_plugin.HumanoidMonitorPlugin" class="doc doc-heading">
+            <code>HumanoidMonitorPlugin</code>
+
+
+<a href="#humanoid_rqt.monitor_plugin.HumanoidMonitorPlugin" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="rqt_gui_py.plugin.Plugin">Plugin</span></code></p>
+
+
+
+        <p>Main RQt plugin for humanoid monitoring.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
