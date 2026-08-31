@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numdynamixels_0',['numDynamixels',['../classhumanoid__hardware_1_1CM550.html#a318ea25714a5f74a7feb121a56c99dce',1,'humanoid_hardware::CM550']]]
+  ['jointnudgenode_0',['JointNudgeNode',['../classhumanoid__hardware_1_1JointNudgeNode.html#a6dc4c76f0660934238d95cf91e932c1f',1,'humanoid_hardware::JointNudgeNode']]]
 ];

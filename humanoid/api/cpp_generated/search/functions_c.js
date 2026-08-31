@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quaternion_0',['quaternion',['../classhumanoid__hardware_1_1CM550.html#a924f2250406f18b1b254b286d4a7b459',1,'humanoid_hardware::CM550']]]
+  ['numdynamixels_0',['numDynamixels',['../classhumanoid__hardware_1_1CM550.html#a318ea25714a5f74a7feb121a56c99dce',1,'humanoid_hardware::CM550']]]
 ];

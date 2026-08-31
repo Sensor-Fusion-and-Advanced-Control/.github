@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['off_0',['OFF',['../namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200edea88559a0cfd8250c9d65970cc145c92d4',1,'humanoid_hardware']]],
-  ['on_1',['ON',['../namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200edea90651ebea9a35ec4e018c8157492e17c',1,'humanoid_hardware']]]
+  ['position_0',['Position',['../namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda52f5e0bc3859bc5f5e25130b6c7e8881',1,'humanoid_hardware']]],
+  ['pwm_1',['PWM',['../namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda8449bc264b69c3a0fe8b60361eaf7aeb',1,'humanoid_hardware']]]
 ];

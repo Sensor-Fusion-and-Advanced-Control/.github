@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dxlpower_0',['DxlPower',['../namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200ede',1,'humanoid_hardware']]]
+  ['operatingmode_0',['OperatingMode',['../namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfd',1,'humanoid_hardware']]]
 ];

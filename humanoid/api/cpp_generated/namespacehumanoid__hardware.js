@@ -1,14 +1,24 @@
 var namespacehumanoid__hardware =
 [
     [ "dxl", "namespacehumanoid__hardware_1_1dxl.html", [
+      [ "BUS_WATCHDOG", "namespacehumanoid__hardware_1_1dxl.html#a96585b3c0b46a21e3c97046c460f2472", null ],
+      [ "FIRMWARE_VERSION", "namespacehumanoid__hardware_1_1dxl.html#ab5934f88a6fa86e3d8a5fece36f87d67", null ],
       [ "GOAL_POSITION", "namespacehumanoid__hardware_1_1dxl.html#afc21c8a3394adabc9bbabd54c71433bf", null ],
+      [ "GOAL_PWM", "namespacehumanoid__hardware_1_1dxl.html#a4546e1d581383cd29f79b822fbb1ab09", null ],
+      [ "GOAL_VELOCITY", "namespacehumanoid__hardware_1_1dxl.html#a2192dc613991c431a0dec55e8ba2d870", null ],
+      [ "HARDWARE_ERROR_STATUS", "namespacehumanoid__hardware_1_1dxl.html#ae1fc2ea7bd8b6e9f9d2afcf2c12e3f63", null ],
       [ "LED", "namespacehumanoid__hardware_1_1dxl.html#a29c7a938c56873399bc50eb55ffb5d7f", null ],
+      [ "MODEL_NUMBER", "namespacehumanoid__hardware_1_1dxl.html#a104281ef96736bca31b4402e01a8caa6", null ],
+      [ "MOVING", "namespacehumanoid__hardware_1_1dxl.html#a78a6656b08b7171936f529a3a3c231a9", null ],
       [ "OPERATING_MODE", "namespacehumanoid__hardware_1_1dxl.html#a81653f0519024de4aeb623614e254ce7", null ],
-      [ "PRESENT_CURRENT", "namespacehumanoid__hardware_1_1dxl.html#afa3ddfe6f46a7683d406b2eaba674216", null ],
       [ "PRESENT_INPUT_VOLTAGE", "namespacehumanoid__hardware_1_1dxl.html#a2eab81a623f7b712d89e8fc93664ce3a", null ],
+      [ "PRESENT_LOAD", "namespacehumanoid__hardware_1_1dxl.html#aba935181aa7d2963267ba5233f767079", null ],
       [ "PRESENT_POSITION", "namespacehumanoid__hardware_1_1dxl.html#aa4322935fa4b7b06ad07765872966259", null ],
+      [ "PRESENT_PWM", "namespacehumanoid__hardware_1_1dxl.html#a4d6e6c81d0a0984a568151e744a3bf1f", null ],
       [ "PRESENT_TEMPERATURE", "namespacehumanoid__hardware_1_1dxl.html#a0e4110ea11429caf355d188363efb861", null ],
       [ "PRESENT_VELOCITY", "namespacehumanoid__hardware_1_1dxl.html#ad56c28f57027e088347eb3f089aa72af", null ],
+      [ "PROFILE_ACCELERATION", "namespacehumanoid__hardware_1_1dxl.html#ad4e2372064d2ea8de11426335e94cc37", null ],
+      [ "PROFILE_VELOCITY", "namespacehumanoid__hardware_1_1dxl.html#ab658d945eca33740cc4e6c0dfdef735f", null ],
       [ "TORQUE_ENABLE", "namespacehumanoid__hardware_1_1dxl.html#a1f443e550557b4ecd823a102f01d7497", null ]
     ] ],
     [ "joints", "namespacehumanoid__hardware_1_1joints.html", [
@@ -35,9 +45,15 @@ var namespacehumanoid__hardware =
     [ "CM550", "classhumanoid__hardware_1_1CM550.html", "classhumanoid__hardware_1_1CM550" ],
     [ "ControllerState", "structhumanoid__hardware_1_1ControllerState.html", "structhumanoid__hardware_1_1ControllerState" ],
     [ "Gyroscope", "structhumanoid__hardware_1_1Gyroscope.html", "structhumanoid__hardware_1_1Gyroscope" ],
+    [ "HardwareNode", "classhumanoid__hardware_1_1HardwareNode.html", "classhumanoid__hardware_1_1HardwareNode" ],
     [ "IMUData", "structhumanoid__hardware_1_1IMUData.html", "structhumanoid__hardware_1_1IMUData" ],
-    [ "MonitorNode", "classhumanoid__hardware_1_1MonitorNode.html", "classhumanoid__hardware_1_1MonitorNode" ],
+    [ "JointNudgeNode", "classhumanoid__hardware_1_1JointNudgeNode.html", "classhumanoid__hardware_1_1JointNudgeNode" ],
+    [ "LedState", "structhumanoid__hardware_1_1LedState.html", "structhumanoid__hardware_1_1LedState" ],
+    [ "MotorReading", "structhumanoid__hardware_1_1MotorReading.html", "structhumanoid__hardware_1_1MotorReading" ],
     [ "Orientation", "structhumanoid__hardware_1_1Orientation.html", "structhumanoid__hardware_1_1Orientation" ],
+    [ "SensorCheckNode", "classhumanoid__hardware_1_1SensorCheckNode.html", "classhumanoid__hardware_1_1SensorCheckNode" ],
+    [ "TopicStats", "structhumanoid__hardware_1_1TopicStats.html", "structhumanoid__hardware_1_1TopicStats" ],
+    [ "MotorReadings", "namespacehumanoid__hardware.html#aad17d372e3acc992990507a156742735", null ],
     [ "ButtonState", "namespacehumanoid__hardware.html#a414e44de6e6825541e22c17edc4fbcd3", [
       [ "NONE", "namespacehumanoid__hardware.html#a414e44de6e6825541e22c17edc4fbcd3ab50339a10e1de285ac99d4c3990b8693", null ],
       [ "START", "namespacehumanoid__hardware.html#a414e44de6e6825541e22c17edc4fbcd3ab078ffd28db767c502ac367053f6e0ac", null ],
@@ -50,10 +66,6 @@ var namespacehumanoid__hardware =
       [ "MANAGE", "namespacehumanoid__hardware.html#ad0d0ec1cc9476c952d6e80765650d44da92814a387d2fe972e8aa877bc152980c", null ],
       [ "BOOTLOADER", "namespacehumanoid__hardware.html#ad0d0ec1cc9476c952d6e80765650d44daeff5b070b28daeabed75cd6e6651016e", null ],
       [ "REBOOT", "namespacehumanoid__hardware.html#ad0d0ec1cc9476c952d6e80765650d44da65abf85acd7ea0c82f179038bdc375f5", null ]
-    ] ],
-    [ "DxlPower", "namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200ede", [
-      [ "OFF", "namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200edea88559a0cfd8250c9d65970cc145c92d4", null ],
-      [ "ON", "namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200edea90651ebea9a35ec4e018c8157492e17c", null ]
     ] ],
     [ "OperatingMode", "namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfd", [
       [ "Current", "namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda222a267cc5778206b253be35ee3ddab5", null ],

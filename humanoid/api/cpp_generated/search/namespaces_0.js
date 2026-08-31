@@ -5,5 +5,7 @@ var searchData=
   ['humanoid_5fhardware_3a_3ajoints_2',['joints',['../namespacehumanoid__hardware_1_1joints.html',1,'humanoid_hardware']]],
   ['humanoid_5fhardware_3a_3aregisters_3',['registers',['../namespacehumanoid__hardware_1_1registers.html',1,'humanoid_hardware']]],
   ['humanoid_5fhardware_3a_3aregisters_3a_3aeeprom_4',['EEPROM',['../namespacehumanoid__hardware_1_1registers_1_1EEPROM.html',1,'humanoid_hardware::registers']]],
-  ['humanoid_5fhardware_3a_3aregisters_3a_3aram_5',['RAM',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html',1,'humanoid_hardware::registers']]]
+  ['humanoid_5fhardware_3a_3aregisters_3a_3amodule_5fcategory_5',['module_category',['../namespacehumanoid__hardware_1_1registers_1_1module__category.html',1,'humanoid_hardware::registers']]],
+  ['humanoid_5fhardware_3a_3aregisters_3a_3aram_6',['RAM',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html',1,'humanoid_hardware::registers']]],
+  ['humanoid_5fsafety_7',['humanoid_safety',['../namespacehumanoid__safety.html',1,'']]]
 ];

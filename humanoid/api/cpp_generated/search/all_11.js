@@ -1,9 +1,26 @@
 var searchData=
 [
-  ['scan_5fdxl_0',['SCAN_DXL',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#ad644f61e9009ba867440e2b58e4af759',1,'humanoid_hardware::registers::RAM']]],
-  ['setgoalposition_1',['setGoalPosition',['../classhumanoid__hardware_1_1CM550.html#ad4cb4683cf71d934957d37984a456fa3',1,'humanoid_hardware::CM550']]],
-  ['setled_2',['setLED',['../classhumanoid__hardware_1_1CM550.html#a1eca4d68a1434961c689aa10fb4bf0b1',1,'humanoid_hardware::CM550']]],
-  ['start_3',['START',['../namespacehumanoid__hardware.html#a414e44de6e6825541e22c17edc4fbcd3ab078ffd28db767c502ac367053f6e0ac',1,'humanoid_hardware']]],
-  ['start_5fbutton_4',['start_button',['../structhumanoid__hardware_1_1ControllerState.html#ade7850d64cfe16c992e2d9bf88ca935d',1,'humanoid_hardware::ControllerState']]],
-  ['state_5',['state',['../classhumanoid__hardware_1_1CM550.html#a0e7bcdfc6f5b1ed02f44077130209f99',1,'humanoid_hardware::CM550']]]
+  ['safety_5fnode_2ecpp_0',['safety_node.cpp',['../safety__node_8cpp.html',1,'']]],
+  ['safety_5fnode_2ehpp_1',['safety_node.hpp',['../safety__node_8hpp.html',1,'']]],
+  ['safetynode_2',['safetynode',['../classhumanoid__safety_1_1SafetyNode.html#a250e5c8aed0314807f067541855adcb2',1,'humanoid_safety::SafetyNode::SafetyNode()'],['../classhumanoid__safety_1_1SafetyNode.html',1,'humanoid_safety::SafetyNode']]],
+  ['scan_5fdxl_3',['SCAN_DXL',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#ad644f61e9009ba867440e2b58e4af759',1,'humanoid_hardware::registers::RAM']]],
+  ['scandynamixels_4',['scanDynamixels',['../classhumanoid__hardware_1_1CM550.html#a9b1d92fef1daf4b00768f9ef509cdb38',1,'humanoid_hardware::CM550']]],
+  ['sensor_5fcheck_2ecpp_5',['sensor_check.cpp',['../sensor__check_8cpp.html',1,'']]],
+  ['sensorchecknode_6',['sensorchecknode',['../classhumanoid__hardware_1_1SensorCheckNode.html',1,'humanoid_hardware::SensorCheckNode'],['../classhumanoid__hardware_1_1SensorCheckNode.html#afea57c166c42bbc5400063c99327cbcc',1,'humanoid_hardware::SensorCheckNode::SensorCheckNode()']]],
+  ['servo_5fposition_7',['SERVO_POSITION',['../namespacehumanoid__hardware_1_1registers_1_1module__category.html#a9ae1a0ebf710dd564d4b9b8915bc3aab',1,'humanoid_hardware::registers::module_category']]],
+  ['setdxlpower_8',['setDxlPower',['../classhumanoid__hardware_1_1CM550.html#a047092aef1d36e44188d406e677c46b6',1,'humanoid_hardware::CM550']]],
+  ['setgoalposition_9',['setGoalPosition',['../classhumanoid__hardware_1_1CM550.html#ad4cb4683cf71d934957d37984a456fa3',1,'humanoid_hardware::CM550']]],
+  ['setgoalpwm_10',['setGoalPwm',['../classhumanoid__hardware_1_1CM550.html#a0e19e68706c9f14b67e587e85985f628',1,'humanoid_hardware::CM550']]],
+  ['setgoalvelocity_11',['setGoalVelocity',['../classhumanoid__hardware_1_1CM550.html#ab329f0bfdaaf2b84c043f152ce97fd91',1,'humanoid_hardware::CM550']]],
+  ['setled_12',['setled',['../classhumanoid__hardware_1_1CM550.html#a702b1fcd564b1211ce475d3f65b2c510',1,'humanoid_hardware::CM550::setLed(bool red, bool green, bool blue)'],['../classhumanoid__hardware_1_1CM550.html#a1eca4d68a1434961c689aa10fb4bf0b1',1,'humanoid_hardware::CM550::setLED(uint8_t motor_id, bool on)']]],
+  ['setmode_13',['setMode',['../classhumanoid__hardware_1_1CM550.html#a20cf06345234f1705cba92aceb8f9e2e',1,'humanoid_hardware::CM550']]],
+  ['setoperatingmode_14',['setOperatingMode',['../classhumanoid__hardware_1_1CM550.html#a8337e6ecb7d948ec058e09be100ace1e',1,'humanoid_hardware::CM550']]],
+  ['setportledmodule_15',['setPortLedModule',['../classhumanoid__hardware_1_1CM550.html#acc63e33e6db1d912969ba32223d551d4',1,'humanoid_hardware::CM550']]],
+  ['setportservoposition_16',['setPortServoPosition',['../classhumanoid__hardware_1_1CM550.html#a5351392bd38b68fbb9acf1d5702046ca',1,'humanoid_hardware::CM550']]],
+  ['setportservospeed_17',['setPortServoSpeed',['../classhumanoid__hardware_1_1CM550.html#a4b9f94d8ab9744f1e9751595130503de',1,'humanoid_hardware::CM550']]],
+  ['sounddetectedcount_18',['soundDetectedCount',['../classhumanoid__hardware_1_1CM550.html#a4478c599943ea3b94514e99642354844',1,'humanoid_hardware::CM550']]],
+  ['sounddetectingcount_19',['soundDetectingCount',['../classhumanoid__hardware_1_1CM550.html#a1b293a83f52dea95878fc192bdf3ae6f',1,'humanoid_hardware::CM550']]],
+  ['start_20',['START',['../namespacehumanoid__hardware.html#a414e44de6e6825541e22c17edc4fbcd3ab078ffd28db767c502ac367053f6e0ac',1,'humanoid_hardware']]],
+  ['start_5fbutton_21',['start_button',['../structhumanoid__hardware_1_1ControllerState.html#ade7850d64cfe16c992e2d9bf88ca935d',1,'humanoid_hardware::ControllerState']]],
+  ['state_22',['state',['../classhumanoid__hardware_1_1CM550.html#a0e7bcdfc6f5b1ed02f44077130209f99',1,'humanoid_hardware::CM550']]]
 ];

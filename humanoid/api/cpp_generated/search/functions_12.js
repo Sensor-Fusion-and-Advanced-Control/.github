@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7ecm550_0',['~CM550',['../classhumanoid__hardware_1_1CM550.html#ad4fcbbdf65b90dad157ad143e1a6b5d8',1,'humanoid_hardware::CM550']]],
-  ['_7emonitornode_1',['~MonitorNode',['../classhumanoid__hardware_1_1MonitorNode.html#a7d8bc46217141782f584cd1f09fd68dc',1,'humanoid_hardware::MonitorNode']]]
+  ['temperature_0',['temperature',['../classhumanoid__hardware_1_1CM550.html#a8ee5b2c2879916d60c9905425404227c',1,'humanoid_hardware::CM550']]],
+  ['torqueenabled_1',['torqueEnabled',['../classhumanoid__hardware_1_1CM550.html#abfaf47afb7ef4dda056090eaafa1f607',1,'humanoid_hardware::CM550']]]
 ];

@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['scan_5fdxl_0',['SCAN_DXL',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#ad644f61e9009ba867440e2b58e4af759',1,'humanoid_hardware::registers::RAM']]],
-  ['start_5fbutton_1',['start_button',['../structhumanoid__hardware_1_1ControllerState.html#ade7850d64cfe16c992e2d9bf88ca935d',1,'humanoid_hardware::ControllerState']]]
+  ['pitch_0',['pitch',['../structhumanoid__hardware_1_1Orientation.html#a740056f7b36f24c0126d84c6dd49cf10',1,'humanoid_hardware::Orientation::pitch'],['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#a62261bb9ec6823b82cd827536037cfd9',1,'humanoid_hardware::registers::RAM::PITCH']]],
+  ['port1_5fled_5fmodule_1',['PORT1_LED_MODULE',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#a3ac60b48b236fa0c4fc09f5d55d1471d',1,'humanoid_hardware::registers::RAM']]],
+  ['port1_5fservo_5fposition_2',['PORT1_SERVO_POSITION',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#a000e3d8d9cda6bb7a4ca852a0c97306e',1,'humanoid_hardware::registers::RAM']]],
+  ['port1_5fservo_5fspeed_3',['PORT1_SERVO_SPEED',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#af6f0187eb716ad7b224988dfc92f8561',1,'humanoid_hardware::registers::RAM']]],
+  ['port2_5fled_5fmodule_4',['PORT2_LED_MODULE',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#a4c61f7f13a5570b595f1fde630073437',1,'humanoid_hardware::registers::RAM']]],
+  ['port2_5fservo_5fposition_5',['PORT2_SERVO_POSITION',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#a561ad00233b3abf15260bbfab1deea12',1,'humanoid_hardware::registers::RAM']]],
+  ['port2_5fservo_5fspeed_6',['PORT2_SERVO_SPEED',['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#a6af5fced067b462d4333723a23f0ed6d',1,'humanoid_hardware::registers::RAM']]],
+  ['port_5fservo_5fmode_7',['PORT_SERVO_MODE',['../classhumanoid__hardware_1_1HardwareNode.html#ae120173d1d07814ebaf680cb6ca656a0',1,'humanoid_hardware::HardwareNode']]],
+  ['present_5finput_5fvoltage_8',['present_input_voltage',['../structhumanoid__hardware_1_1MotorReading.html#ac71b52a837b4cc7ecb6abadfa79df7e2',1,'humanoid_hardware::MotorReading::present_input_voltage'],['../namespacehumanoid__hardware_1_1dxl.html#a2eab81a623f7b712d89e8fc93664ce3a',1,'humanoid_hardware::dxl::PRESENT_INPUT_VOLTAGE']]],
+  ['present_5fload_9',['present_load',['../structhumanoid__hardware_1_1MotorReading.html#ab80739e4e51d4a2786a27f19227c4746',1,'humanoid_hardware::MotorReading::present_load'],['../namespacehumanoid__hardware_1_1dxl.html#aba935181aa7d2963267ba5233f767079',1,'humanoid_hardware::dxl::PRESENT_LOAD']]],
+  ['present_5fposition_10',['present_position',['../structhumanoid__hardware_1_1MotorReading.html#ac81459b23d0d7e5831f1006ff26d102b',1,'humanoid_hardware::MotorReading::present_position'],['../namespacehumanoid__hardware_1_1dxl.html#aa4322935fa4b7b06ad07765872966259',1,'humanoid_hardware::dxl::PRESENT_POSITION']]],
+  ['present_5fpwm_11',['present_pwm',['../structhumanoid__hardware_1_1MotorReading.html#ab634ded09516a1df5e6736f3257acf69',1,'humanoid_hardware::MotorReading::present_pwm'],['../namespacehumanoid__hardware_1_1dxl.html#a4d6e6c81d0a0984a568151e744a3bf1f',1,'humanoid_hardware::dxl::PRESENT_PWM']]],
+  ['present_5ftemperature_12',['present_temperature',['../structhumanoid__hardware_1_1MotorReading.html#af6c2cf85c86e03da66bcbe11c35bf610',1,'humanoid_hardware::MotorReading::present_temperature'],['../namespacehumanoid__hardware_1_1dxl.html#a0e4110ea11429caf355d188363efb861',1,'humanoid_hardware::dxl::PRESENT_TEMPERATURE']]],
+  ['present_5fvelocity_13',['present_velocity',['../structhumanoid__hardware_1_1MotorReading.html#ae0471ccbdca73254fe7055769aa41256',1,'humanoid_hardware::MotorReading::present_velocity'],['../namespacehumanoid__hardware_1_1dxl.html#ad56c28f57027e088347eb3f089aa72af',1,'humanoid_hardware::dxl::PRESENT_VELOCITY']]],
+  ['profile_5facceleration_14',['PROFILE_ACCELERATION',['../namespacehumanoid__hardware_1_1dxl.html#ad4e2372064d2ea8de11426335e94cc37',1,'humanoid_hardware::dxl']]],
+  ['profile_5fvelocity_15',['PROFILE_VELOCITY',['../namespacehumanoid__hardware_1_1dxl.html#ab658d945eca33740cc4e6c0dfdef735f',1,'humanoid_hardware::dxl']]]
 ];

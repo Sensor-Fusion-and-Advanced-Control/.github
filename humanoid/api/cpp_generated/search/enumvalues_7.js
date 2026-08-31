@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['position_0',['Position',['../namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda52f5e0bc3859bc5f5e25130b6c7e8881',1,'humanoid_hardware']]],
-  ['pwm_1',['PWM',['../namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda8449bc264b69c3a0fe8b60361eaf7aeb',1,'humanoid_hardware']]]
+  ['reboot_0',['REBOOT',['../namespacehumanoid__hardware.html#ad0d0ec1cc9476c952d6e80765650d44da65abf85acd7ea0c82f179038bdc375f5',1,'humanoid_hardware']]]
 ];

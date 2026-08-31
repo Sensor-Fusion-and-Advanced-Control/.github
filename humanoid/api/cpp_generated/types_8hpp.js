@@ -4,7 +4,10 @@ var types_8hpp =
     [ "humanoid_hardware::Gyroscope", "structhumanoid__hardware_1_1Gyroscope.html", "structhumanoid__hardware_1_1Gyroscope" ],
     [ "humanoid_hardware::Accelerometer", "structhumanoid__hardware_1_1Accelerometer.html", "structhumanoid__hardware_1_1Accelerometer" ],
     [ "humanoid_hardware::IMUData", "structhumanoid__hardware_1_1IMUData.html", "structhumanoid__hardware_1_1IMUData" ],
+    [ "humanoid_hardware::LedState", "structhumanoid__hardware_1_1LedState.html", "structhumanoid__hardware_1_1LedState" ],
     [ "humanoid_hardware::ControllerState", "structhumanoid__hardware_1_1ControllerState.html", "structhumanoid__hardware_1_1ControllerState" ],
+    [ "humanoid_hardware::MotorReading", "structhumanoid__hardware_1_1MotorReading.html", "structhumanoid__hardware_1_1MotorReading" ],
+    [ "MotorReadings", "types_8hpp.html#aad17d372e3acc992990507a156742735", null ],
     [ "ButtonState", "types_8hpp.html#a414e44de6e6825541e22c17edc4fbcd3", [
       [ "NONE", "types_8hpp.html#a414e44de6e6825541e22c17edc4fbcd3ab50339a10e1de285ac99d4c3990b8693", null ],
       [ "START", "types_8hpp.html#a414e44de6e6825541e22c17edc4fbcd3ab078ffd28db767c502ac367053f6e0ac", null ],
@@ -17,10 +20,6 @@ var types_8hpp =
       [ "MANAGE", "types_8hpp.html#ad0d0ec1cc9476c952d6e80765650d44da92814a387d2fe972e8aa877bc152980c", null ],
       [ "BOOTLOADER", "types_8hpp.html#ad0d0ec1cc9476c952d6e80765650d44daeff5b070b28daeabed75cd6e6651016e", null ],
       [ "REBOOT", "types_8hpp.html#ad0d0ec1cc9476c952d6e80765650d44da65abf85acd7ea0c82f179038bdc375f5", null ]
-    ] ],
-    [ "DxlPower", "types_8hpp.html#ab2b7052edbe7776650d260e387200ede", [
-      [ "OFF", "types_8hpp.html#ab2b7052edbe7776650d260e387200edea88559a0cfd8250c9d65970cc145c92d4", null ],
-      [ "ON", "types_8hpp.html#ab2b7052edbe7776650d260e387200edea90651ebea9a35ec4e018c8157492e17c", null ]
     ] ],
     [ "OperatingMode", "types_8hpp.html#a4a41fac604c969a7ef8db4786fca3cfd", [
       [ "Current", "types_8hpp.html#a4a41fac604c969a7ef8db4786fca3cfda222a267cc5778206b253be35ee3ddab5", null ],

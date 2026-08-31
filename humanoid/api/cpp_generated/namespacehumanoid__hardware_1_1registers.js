@@ -1,6 +1,7 @@
 var namespacehumanoid__hardware_1_1registers =
 [
     [ "EEPROM", "namespacehumanoid__hardware_1_1registers_1_1EEPROM.html", [
+      [ "BLE_SIGNAL_POWER", "namespacehumanoid__hardware_1_1registers_1_1EEPROM.html#aedbbe3034e3de824dc61640f9cbe37a7", null ],
       [ "BOOTLOADER_VERSION", "namespacehumanoid__hardware_1_1registers_1_1EEPROM.html#a485a7036f4e66cb69fe595bea3500d86", null ],
       [ "CONTROLLER_DIRECTION", "namespacehumanoid__hardware_1_1registers_1_1EEPROM.html#a95ba7d831f827f944ea1ec5b37d3b478", null ],
       [ "DXL_BAUDRATE", "namespacehumanoid__hardware_1_1registers_1_1EEPROM.html#ad91f7e0799bb36066fc7074047d289cd", null ],
@@ -10,11 +11,16 @@ var namespacehumanoid__hardware_1_1registers =
       [ "TEMPERATURE_LIMIT", "namespacehumanoid__hardware_1_1registers_1_1EEPROM.html#acc36a6b7875bd0d93325eb14f075b3a8", null ],
       [ "UART_BAUDRATE", "namespacehumanoid__hardware_1_1registers_1_1EEPROM.html#a8092e24c7c56f1fd0f10a0d6a9ef68e3", null ]
     ] ],
+    [ "module_category", "namespacehumanoid__hardware_1_1registers_1_1module__category.html", [
+      [ "LED_MODULE", "namespacehumanoid__hardware_1_1registers_1_1module__category.html#ae7e6fd88d982d6c5a22adcb79a5415da", null ],
+      [ "NONE", "namespacehumanoid__hardware_1_1registers_1_1module__category.html#a240b5395a2393cae187e233fc7ae88fc", null ],
+      [ "SERVO_POSITION", "namespacehumanoid__hardware_1_1registers_1_1module__category.html#a9ae1a0ebf710dd564d4b9b8915bc3aab", null ]
+    ] ],
     [ "RAM", "namespacehumanoid__hardware_1_1registers_1_1RAM.html", [
       [ "ACCEL_X", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a5ad88c66f4b314444fae9b29fca45c05", null ],
       [ "ACCEL_Y", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#afbc7346c62d54667a63984b05fa9f84e", null ],
       [ "ACCEL_Z", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#ac5c83d4d56416405801fe8f9feb867c4", null ],
-      [ "BLE_STATUS", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#af970e97dbde4e802f9a48e696b69aae0", null ],
+      [ "BLE_CHECK", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#acf5283dc121f50e8b56c6a16e23bf4cb", null ],
       [ "BUTTON_MS", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#aa3672c29a540cc9e9ec66e8f711a9d1d", null ],
       [ "BUTTON_RELEASED", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a59a99c0f8402e60fdbb69f18e1d7068e", null ],
       [ "BUTTON_SEC", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a4a784a132bad1171db4d85243ad49daf", null ],
@@ -32,16 +38,28 @@ var namespacehumanoid__hardware_1_1registers =
       [ "MICROS", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#aceefa0948fcf99aeeb255693c28b8dbb", null ],
       [ "MILLIS", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#ac9e68982c6e431336df1a7580262d9bb", null ],
       [ "MODE", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a5c5630775291c6e0c6dcf5bd026359ff", null ],
+      [ "MODULE_CATEGORY_1", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a6c109e64c87369c12bdb55cdc1640476", null ],
+      [ "MODULE_CATEGORY_2", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a751b4b1cb27e36b6bc9bf57a441fc185", null ],
       [ "NUM_DXL", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a397b97a196d7b2ef7d0ba38f46096439", null ],
       [ "PITCH", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a62261bb9ec6823b82cd827536037cfd9", null ],
+      [ "PORT1_LED_MODULE", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a3ac60b48b236fa0c4fc09f5d55d1471d", null ],
+      [ "PORT1_SERVO_POSITION", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a000e3d8d9cda6bb7a4ca852a0c97306e", null ],
+      [ "PORT1_SERVO_SPEED", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#af6f0187eb716ad7b224988dfc92f8561", null ],
+      [ "PORT2_LED_MODULE", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a4c61f7f13a5570b595f1fde630073437", null ],
+      [ "PORT2_SERVO_POSITION", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a561ad00233b3abf15260bbfab1deea12", null ],
+      [ "PORT2_SERVO_SPEED", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a6af5fced067b462d4333723a23f0ed6d", null ],
       [ "ROLL", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a10957d45f9eae1bc147534201e03945e", null ],
+      [ "RPI_CONNECTED", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a1000f516e591f5e062da79cabc41883f", null ],
       [ "SCAN_DXL", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#ad644f61e9009ba867440e2b58e4af759", null ],
       [ "TEMPERATURE", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a6d3e4c029618ada499f5ee2e9e08486d", null ],
+      [ "USB_OTG_CONNECTED", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#af6b51639d933d59c8ace7f0500c2ca33", null ],
       [ "VOLTAGE", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#aefc31236122e2bf5e047db31b686dda9", null ],
       [ "YAW", "namespacehumanoid__hardware_1_1registers_1_1RAM.html#a748f02d2463ab63b885926472045e27d", null ]
     ] ],
     [ "ACCEL_SCALE", "namespacehumanoid__hardware_1_1registers.html#ab96ac1803b650ba9de787fafee38a90e", null ],
     [ "ANGLE_SCALE", "namespacehumanoid__hardware_1_1registers.html#a77589972ce97094013753d4dc9b99b38", null ],
+    [ "BUZZER_INDEX", "namespacehumanoid__hardware_1_1registers.html#a30d69cec34396dfd35673195740b0a1e", null ],
+    [ "BUZZER_TIME", "namespacehumanoid__hardware_1_1registers.html#a2683ffe0ceb6d57efe72db02f376f1f4", null ],
     [ "DEFAULT_BAUDRATE", "namespacehumanoid__hardware_1_1registers.html#a0359a8475783d762f202c61c926dff33", null ],
     [ "DEFAULT_ID", "namespacehumanoid__hardware_1_1registers.html#ac4d2375ab11bf1c5631c9f8ea7050141", null ],
     [ "GYRO_SCALE", "namespacehumanoid__hardware_1_1registers.html#aca714180c98d4712e7b7b1d8301a42e1", null ],

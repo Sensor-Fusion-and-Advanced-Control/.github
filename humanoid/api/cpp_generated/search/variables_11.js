@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['voltage_0',['voltage',['../structhumanoid__hardware_1_1ControllerState.html#a759b3f540e6e7913ce684a411a3118d2',1,'humanoid_hardware::ControllerState::voltage'],['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#aefc31236122e2bf5e047db31b686dda9',1,'humanoid_hardware::registers::RAM::VOLTAGE']]],
-  ['voltage_5fscale_1',['VOLTAGE_SCALE',['../namespacehumanoid__hardware_1_1registers.html#a958ba6e3b6812fa7bcbabcee78cd21ad',1,'humanoid_hardware::registers']]]
+  ['temperature_0',['temperature',['../structhumanoid__hardware_1_1ControllerState.html#a2cb0c792c39953e160016c57342a37a3',1,'humanoid_hardware::ControllerState::temperature'],['../namespacehumanoid__hardware_1_1registers_1_1RAM.html#a6d3e4c029618ada499f5ee2e9e08486d',1,'humanoid_hardware::registers::RAM::TEMPERATURE']]],
+  ['temperature_5flimit_1',['TEMPERATURE_LIMIT',['../namespacehumanoid__hardware_1_1registers_1_1EEPROM.html#acc36a6b7875bd0d93325eb14f075b3a8',1,'humanoid_hardware::registers::EEPROM']]],
+  ['torque_5fenable_2',['TORQUE_ENABLE',['../namespacehumanoid__hardware_1_1dxl.html#a1f443e550557b4ecd823a102f01d7497',1,'humanoid_hardware::dxl']]],
+  ['total_5finterval_3',['total_interval',['../structhumanoid__hardware_1_1TopicStats.html#a076ebef9cb8587da02181e2a4cb7a2ff',1,'humanoid_hardware::TopicStats']]]
 ];

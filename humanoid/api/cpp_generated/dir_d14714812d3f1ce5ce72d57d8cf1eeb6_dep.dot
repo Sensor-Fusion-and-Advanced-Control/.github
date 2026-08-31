@@ -14,5 +14,5 @@ digraph "src/humanoid_hardware"
   dir_4135406da37f2e74d4e80b2b7058bc26 [label="src", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_4135406da37f2e74d4e80b2b7058bc26.html",tooltip=""];
   }
   }
-  dir_4135406da37f2e74d4e80b2b7058bc26->dir_a17467f0082b26f78e4cfff168b102b1 [headlabel="4", labeldistance=1.5 headhref="dir_000004_000002.html" href="dir_000004_000002.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_4135406da37f2e74d4e80b2b7058bc26->dir_a17467f0082b26f78e4cfff168b102b1 [headlabel="6", labeldistance=1.5 headhref="dir_000007_000004.html" href="dir_000007_000004.html" color="steelblue1" fontcolor="steelblue1"];
 }

@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('namespacehumanoid__hardware.html','');
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">humanoid_hardware Namespace Reference</div></div>
 </div><!--header-->
@@ -117,12 +118,28 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhumanoid__hardware_1_1Gyroscope.html">Gyroscope</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhumanoid__hardware_1_1HardwareNode.html">HardwareNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhumanoid__hardware_1_1IMUData.html">IMUData</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhumanoid__hardware_1_1MonitorNode.html">MonitorNode</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhumanoid__hardware_1_1JointNudgeNode.html">JointNudgeNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhumanoid__hardware_1_1LedState.html">LedState</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhumanoid__hardware_1_1MotorReading.html">MotorReading</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhumanoid__hardware_1_1Orientation.html">Orientation</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhumanoid__hardware_1_1SensorCheckNode.html">SensorCheckNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhumanoid__hardware_1_1TopicStats.html">TopicStats</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-topic reception bookkeeping.  <a href="structhumanoid__hardware_1_1TopicStats.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aad17d372e3acc992990507a156742735" id="r_aad17d372e3acc992990507a156742735"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehumanoid__hardware.html#aad17d372e3acc992990507a156742735">MotorReadings</a> = std::map&lt; uint8_t, <a class="el" href="structhumanoid__hardware_1_1MotorReading.html">MotorReading</a> &gt;</td></tr>
+<tr class="separator:aad17d372e3acc992990507a156742735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -142,10 +159,6 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:ad0d0ec1cc9476c952d6e80765650d44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2b7052edbe7776650d260e387200ede" id="r_ab2b7052edbe7776650d260e387200ede"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200ede">DxlPower</a> : uint8_t { <a class="el" href="namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200edea88559a0cfd8250c9d65970cc145c92d4">OFF</a> = 0
-, <a class="el" href="namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200edea90651ebea9a35ec4e018c8157492e17c">ON</a> = 1
- }</td></tr>
-<tr class="separator:ab2b7052edbe7776650d260e387200ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a41fac604c969a7ef8db4786fca3cfd" id="r_a4a41fac604c969a7ef8db4786fca3cfd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfd">OperatingMode</a> : uint8_t { <br />
 &#160;&#160;<a class="el" href="namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda222a267cc5778206b253be35ee3ddab5">Current</a> = 0
 , <a class="el" href="namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda88156d46910a2d733443c339a9231d12">Velocity</a> = 1
@@ -159,6 +172,21 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="separator:a4a41fac604c969a7ef8db4786fca3cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="aad17d372e3acc992990507a156742735" name="aad17d372e3acc992990507a156742735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad17d372e3acc992990507a156742735">&#9670;&#160;</a></span>MotorReadings</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehumanoid__hardware.html#aad17d372e3acc992990507a156742735">humanoid_hardware::MotorReadings</a> = typedef std::map&lt;uint8_t, <a class="el" href="structhumanoid__hardware_1_1MotorReading.html">MotorReading</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a414e44de6e6825541e22c17edc4fbcd3" name="a414e44de6e6825541e22c17edc4fbcd3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a414e44de6e6825541e22c17edc4fbcd3">&#9670;&#160;</a></span>ButtonState</h2>
@@ -213,32 +241,6 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ad0d0ec1cc9476c952d6e80765650d44da92814a387d2fe972e8aa877bc152980c" name="ad0d0ec1cc9476c952d6e80765650d44da92814a387d2fe972e8aa877bc152980c"></a>MANAGE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ad0d0ec1cc9476c952d6e80765650d44daeff5b070b28daeabed75cd6e6651016e" name="ad0d0ec1cc9476c952d6e80765650d44daeff5b070b28daeabed75cd6e6651016e"></a>BOOTLOADER&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ad0d0ec1cc9476c952d6e80765650d44da65abf85acd7ea0c82f179038bdc375f5" name="ad0d0ec1cc9476c952d6e80765650d44da65abf85acd7ea0c82f179038bdc375f5"></a>REBOOT&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="ab2b7052edbe7776650d260e387200ede" name="ab2b7052edbe7776650d260e387200ede"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2b7052edbe7776650d260e387200ede">&#9670;&#160;</a></span>DxlPower</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="namespacehumanoid__hardware.html#ab2b7052edbe7776650d260e387200ede">humanoid_hardware::DxlPower</a> : uint8_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab2b7052edbe7776650d260e387200edea88559a0cfd8250c9d65970cc145c92d4" name="ab2b7052edbe7776650d260e387200edea88559a0cfd8250c9d65970cc145c92d4"></a>OFF&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab2b7052edbe7776650d260e387200edea90651ebea9a35ec4e018c8157492e17c" name="ab2b7052edbe7776650d260e387200edea90651ebea9a35ec4e018c8157492e17c"></a>ON&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
