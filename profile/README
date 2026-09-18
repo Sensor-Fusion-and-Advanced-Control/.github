@@ -1,1 +1,25 @@
-Sensor fusion and advanced control lab, Department of Electrical Engineering, Sharif University of Technology
+# Sensor Fusion and Advanced Control Lab
+
+**Department of Electrical Engineering — Sharif University of Technology**
+
+**Lab Director:** Dr. Behzad Ahi
+
+---
+
+## About
+
+We focus on sensor fusion, state estimation, and advanced control methods, with applications spanning robotics, autonomous vehicles, and other systems.
+
+## Current Projects
+
+### Humanoid Robot Control
+Control of humanoid robots using classical methods (Model-Predictive Control + Whole-Body Control) alongside Reinforcement Learning and Imitation Learning, supported by state estimation and contact detection algorithms. 
+
+### Jetracer Control
+Longitudinal and lateral channel control for the Jetracer autonomous racing platform.
+
+### Cascaded ADRC
+Theoretical development of Cascaded ESO-ADRC (Active Disturbance Rejection Control) controllers.
+
+### Visual-Inertial Odometry
+State estimation by fusing visual and inertial sensor data.
