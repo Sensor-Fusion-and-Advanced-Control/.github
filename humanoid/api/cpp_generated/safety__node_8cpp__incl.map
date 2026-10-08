@@ -1,0 +1,39 @@
+<map id="src/humanoid_safety/src/safety_node.cpp" name="src/humanoid_safety/src/safety_node.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="781,5,939,45"/>
+<area shape="rect" id="Node000002" href="$safety__node_8hpp.html" title=" " alt="" coords="526,93,706,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="807,48,683,91,681,86,806,43"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="730,101,793,126"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="840,48,787,93,783,89,836,44"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="817,101,903,126"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="863,46,863,87,857,87,857,46"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="928,101,1003,126"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="885,44,942,90,939,94,882,48"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="1027,101,1114,126"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="907,43,1031,93,1029,98,905,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,189,61,214"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="526,120,431,126,317,137,195,156,74,184,68,186,66,181,73,179,194,151,317,132,431,120,526,114"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="86,189,157,214"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="526,125,359,146,264,162,170,184,161,187,159,182,169,179,263,157,358,140,525,120"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="181,189,248,214"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="526,129,400,151,261,184,253,186,252,181,259,179,398,145,525,124"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="272,189,349,214"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="537,136,362,184,353,187,352,182,361,179,536,131"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="373,189,416,214"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="556,136,494,157,429,184,427,185,425,180,427,179,492,152,554,131"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="440,189,499,214"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="585,136,502,184,499,179,582,131"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="523,181,709,221"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="619,134,619,167,613,167,613,134"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="733,181,960,221"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="668,131,784,174,783,179,666,136"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="984,181,1179,221"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="707,129,971,177,970,182,706,134"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1203,181,1397,221"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="706,129,719,131,849,146,952,155,1056,163,1190,179,1189,184,1056,169,952,160,849,152,718,136,706,134"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1421,181,1603,221"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="706,129,719,131,910,149,1061,155,1213,161,1407,179,1407,184,1213,166,1061,160,910,154,718,136,706,134"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1627,189,1759,214"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="706,129,719,131,855,144,971,150,1168,150,1365,153,1481,162,1616,179,1639,183,1638,188,1616,184,1480,167,1365,159,1168,156,971,155,855,149,718,136,706,134"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="1783,189,1969,214"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="706,129,719,131,879,146,1014,153,1245,155,1477,157,1612,164,1772,179,1807,184,1807,189,1772,184,1612,169,1476,162,1245,160,1014,158,878,151,718,136,706,134"/>
+</map>

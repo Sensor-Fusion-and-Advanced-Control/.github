@@ -29,6 +29,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
@@ -58,7 +59,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "namespacehumanoid__hardware.html#a414e44de6e6825541e22c17edc4fbcd3ab50339a10e1de285ac99d4c3990b8693",
-"structhumanoid__hardware_1_1MotorReading.html#ab634ded09516a1df5e6736f3257acf69"
+"structhumanoid__hardware_1_1MotorReading.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

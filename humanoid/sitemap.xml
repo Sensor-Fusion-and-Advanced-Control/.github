@@ -2,90 +2,226 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/architecture/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/contributing/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/development/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/python_api_standards/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/cpp/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/contact_detection/contact_gth/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/contact_detection/leg_odometry/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/acceleration_tab/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/bias_tab/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/common_config/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/common_plot_widget/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/common_ros_bridge/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/common_ros_node/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/common_ros_thread/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/common_theme/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/controller/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/main/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/model/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/orientation_tab/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/performance_tab/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/position_tab/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/time_controller/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/vector3_tab/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/velocity_tab/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/monitor/window/</loc>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/mujoco_sim/model/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/mujoco_sim/simulator/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/mujoco_sim/telemetry/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/pinocchio/centroidal/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/pinocchio/dynamics/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/pinocchio/kinematics/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/pinocchio/robot_model/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/pinocchio/snapshot/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
-         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/rqt/monitor_plugin/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/accelerometer/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/config/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/covariance_initialization/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/dynamics/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/dynamics_jacobian/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/ekf_estimator/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/error_calculator/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/evaluation_node/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/initialization_manager/</loc>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/leg_odometry/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/performance_tracker/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/process_covariance/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/state/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/state_converter/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/state_estimator_node/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/state_initialization/</loc>
+         <lastmod>2026-10-08</lastmod>
+    </url>
+    <url>
+         <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/state_estimator/visual_odometry/</loc>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/utils/filters/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/utils/rotations/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
     <url>
          <loc>https://sensor-fusion-and-advanced-control.github.io/.github/humanoid/api/python/utils/time/</loc>
-         <lastmod>2026-09-16</lastmod>
+         <lastmod>2026-10-08</lastmod>
     </url>
 </urlset>

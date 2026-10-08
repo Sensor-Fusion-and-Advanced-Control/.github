@@ -1,0 +1,11 @@
+<map id="humanoid_hardware::ControllerState" name="humanoid_hardware::ControllerState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="532,69,695,109"/>
+<area shape="rect" id="Node000002" href="$structhumanoid__hardware_1_1IMUData.html" title=" " alt="" coords="292,69,455,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="469,87,532,87,532,92,469,92"/>
+<area shape="rect" id="Node000003" href="$structhumanoid__hardware_1_1Orientation.html" title=" " alt="" coords="5,5,168,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,44,293,69,291,74,181,49"/>
+<area shape="rect" id="Node000004" href="$structhumanoid__hardware_1_1Gyroscope.html" title=" " alt="" coords="5,69,168,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="182,87,292,87,292,92,182,92"/>
+<area shape="rect" id="Node000005" href="$structhumanoid__hardware_1_1Accelerometer.html" title=" " alt="" coords="5,133,168,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="181,130,291,105,293,110,182,135"/>
+</map>

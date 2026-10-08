@@ -165,36 +165,37 @@ $(document).ready(function(){initNavTree('safety__node_8hpp_source.html',''); in
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keyword">const</span> humanoid_interfaces::msg::JointCommand &amp;command) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">static</span> <span class="keyword">const</span> std::array&lt;const char *, JOINT_COUNT&gt; JOINT_NAMES;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">static</span> <span class="keyword">const</span> std::array&lt;JointLimit, JOINT_COUNT&gt; DEFAULT_LIMITS;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        std::array&lt;JointLimit, JOINT_COUNT&gt; limits_;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        std::set&lt;std::size_t&gt; disabled_joints_;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        std::array&lt;double, JOINT_COUNT&gt; latest_positions_{};</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        std::array&lt;bool, JOINT_COUNT&gt; has_latest_position_{};</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        std::string raw_command_topic_;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        std::string safe_command_topic_;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        std::string state_topic_;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        std::string backend_torque_service_;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        rclcpp::Publisher&lt;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            humanoid_interfaces::msg::JointCommandArray&gt;::SharedPtr safe_command_publisher_;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        rclcpp::Publisher&lt;std_msgs::msg::String&gt;::SharedPtr warning_publisher_;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        rclcpp::Subscription&lt;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            humanoid_interfaces::msg::JointCommandArray&gt;::SharedPtr command_subscription_;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        rclcpp::Subscription&lt;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            humanoid_interfaces::msg::JointStateArray&gt;::SharedPtr state_subscription_;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        rclcpp::Client&lt;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            humanoid_interfaces::srv::SetJointTorque&gt;::SharedPtr backend_torque_client_;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        rclcpp::Service&lt;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            humanoid_interfaces::srv::ResetJointSafety&gt;::SharedPtr reset_service_;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    };</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        std::array&lt;JointLimit, JOINT_COUNT&gt; limits_;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        std::set&lt;std::size_t&gt; disabled_joints_;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        std::array&lt;double, JOINT_COUNT&gt; latest_positions_{};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        std::array&lt;bool, JOINT_COUNT&gt; has_latest_position_{};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        std::string raw_command_topic_;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        std::string safe_command_topic_;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        std::string state_topic_;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        std::string backend_torque_service_;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        std::string warning_topic_;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        std::string reset_service_name_;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        rclcpp::Publisher&lt;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            humanoid_interfaces::msg::JointCommandArray&gt;::SharedPtr safe_command_publisher_;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        rclcpp::Publisher&lt;std_msgs::msg::String&gt;::SharedPtr warning_publisher_;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        rclcpp::Subscription&lt;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            humanoid_interfaces::msg::JointCommandArray&gt;::SharedPtr command_subscription_;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        rclcpp::Subscription&lt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            humanoid_interfaces::msg::JointStateArray&gt;::SharedPtr state_subscription_;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        rclcpp::Client&lt;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            humanoid_interfaces::srv::SetJointTorque&gt;::SharedPtr backend_torque_client_;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        rclcpp::Service&lt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            humanoid_interfaces::srv::ResetJointSafety&gt;::SharedPtr reset_service_;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    };</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>} <span class="comment">// namespace humanoid_safety</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>} <span class="comment">// namespace humanoid_safety</span></div>
 </div>
 <div class="ttc" id="aclasshumanoid__safety_1_1SafetyNode_html"><div class="ttname"><a href="classhumanoid__safety_1_1SafetyNode.html">humanoid_safety::SafetyNode</a></div><div class="ttdef"><b>Definition</b> safety_node.hpp:28</div></div>
-<div class="ttc" id="aclasshumanoid__safety_1_1SafetyNode_html_a250e5c8aed0314807f067541855adcb2"><div class="ttname"><a href="classhumanoid__safety_1_1SafetyNode.html#a250e5c8aed0314807f067541855adcb2">humanoid_safety::SafetyNode::SafetyNode</a></div><div class="ttdeci">SafetyNode()</div><div class="ttdef"><b>Definition</b> safety_node.cpp:53</div></div>
+<div class="ttc" id="aclasshumanoid__safety_1_1SafetyNode_html_a250e5c8aed0314807f067541855adcb2"><div class="ttname"><a href="classhumanoid__safety_1_1SafetyNode.html#a250e5c8aed0314807f067541855adcb2">humanoid_safety::SafetyNode::SafetyNode</a></div><div class="ttdeci">SafetyNode()</div><div class="ttdef"><b>Definition</b> safety_node.cpp:54</div></div>
 <div class="ttc" id="aclasshumanoid__safety_1_1SafetyNode_html_a7293b803eb5e5de23aaca70697460fe8"><div class="ttname"><a href="classhumanoid__safety_1_1SafetyNode.html#a7293b803eb5e5de23aaca70697460fe8">humanoid_safety::SafetyNode::JOINT_COUNT</a></div><div class="ttdeci">static constexpr std::size_t JOINT_COUNT</div><div class="ttdef"><b>Definition</b> safety_node.hpp:30</div></div>
 <div class="ttc" id="anamespacehumanoid__safety_html"><div class="ttname"><a href="namespacehumanoid__safety.html">humanoid_safety</a></div><div class="ttdef"><b>Definition</b> safety_node.hpp:19</div></div>
 <div class="ttc" id="astructhumanoid__safety_1_1JointLimit_html"><div class="ttname"><a href="structhumanoid__safety_1_1JointLimit.html">humanoid_safety::JointLimit</a></div><div class="ttdef"><b>Definition</b> safety_node.hpp:22</div></div>

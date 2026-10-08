@@ -75,5 +75,6 @@ var namespacehumanoid__hardware =
       [ "CurrentBasedPosition", "namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda4512e7c4e9c7b8395a46add50e3bbd39", null ],
       [ "PWM", "namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda8449bc264b69c3a0fe8b60361eaf7aeb", null ],
       [ "Unknown", "namespacehumanoid__hardware.html#a4a41fac604c969a7ef8db4786fca3cfda88183b946cc5f0e8c96b2e66e1c74a7e", null ]
-    ] ]
+    ] ],
+    [ "require_parameter", "namespacehumanoid__hardware.html#a96f8cd84b0d19c16918a60dfc8d560ac", null ]
 ];
