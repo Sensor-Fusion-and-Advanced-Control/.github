@@ -2,64 +2,454 @@
   "version": 2,
   "items": [
     {
-      "id": "5dcf878b-12ae-4d19-8247-2239e5ef24d4",
-      "name": "Hex socket head screw M3x10",
-      "nameFa": "پیچ آلن M3×10",
-      "category": "Fasteners",
-      "categoryFa": "بست‌ها",
-      "location": "Cabinet A, drawer 2",
-      "locationFa": "کابینت A، کشوی ۲",
-      "quantity": 240
+      "id": "1",
+      "name": "Jetracer",
+      "nameFa": "ماشین خودران",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
     },
     {
-      "id": "0d0d4fb3-160e-4bec-9933-0adf67d84520",
-      "name": "Jumper wire set (M-M, 20 cm)",
-      "nameFa": "مجموعه سیم جامپر (نری-نری، ۲۰ سانتی‌متر)",
+      "id": "2",
+      "name": "Joystick 1",
+      "nameFa": "دسته بازی",
+      "category": "Computer Accessories",
+      "categoryFa": "لوازم جانبی کامپیوتر",
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "name": "HDMI to VGA",
+      "nameFa": "تبدیل مانیتور HDMI به VGA",
+      "category": "Computer Accessories",
+      "categoryFa": "لوازم جانبی کامپیوتر",
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "name": "Humanoid Robot",
+      "nameFa": "ربات انسان‌نما",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "name": "Jetracer Charger",
+      "nameFa": "شارژر ماشین خودران",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "name": "Humanoid Robot Pack 1",
+      "nameFa": "بسته ربات انسان‌نما ۱",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "name": "Humanoid Robot Pack 2",
+      "nameFa": "بسته ربات انسان‌نما ۲",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "name": "DC Power Supply",
+      "nameFa": "منبع تغذیه DC",
       "category": "Electronics",
       "categoryFa": "الکترونیک",
-      "location": "Shelf B, bin 3",
-      "locationFa": "قفسه B، سبد ۳",
-      "quantity": 12
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
     },
     {
-      "id": "4f5604fa-660a-44bc-926e-e4852d7525d6",
-      "name": "Digital multimeter",
-      "nameFa": "مولتی‌متر دیجیتال",
-      "category": "Tools",
-      "categoryFa": "ابزارها",
-      "location": "Workbench 1, top drawer",
-      "locationFa": "میز کار ۱، کشوی بالا",
-      "quantity": 2
+      "id": "9",
+      "name": "Crocodile Wires",
+      "nameFa": "سیم سوسماری",
+      "category": "Electronics",
+      "categoryFa": "الکترونیک",
+      "location": "Cabinet A, drawer 1",
+      "locationFa": "کابینت A، کشوی ۱",
+      "quantity": 1
     },
     {
-      "id": "6a88fa6c-d84e-4e15-9ccc-21a418eafddf",
-      "name": "Li-Po battery 3S 5000 mAh",
-      "nameFa": "باتری لیتیوم-پلیمر 3S 5000 میلی‌آمپرساعت",
-      "category": "Power",
-      "categoryFa": "برق و تغذیه",
-      "location": "Fire cabinet, top shelf",
-      "locationFa": "کابینت ضدحریق، قفسه بالا",
+      "id": "10",
+      "name": "Stapler",
+      "nameFa": "منگنه",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "On top of Cabinet A",
+      "locationFa": " بالای کابینت A",
+      "quantity": 1
+    },
+    {
+      "id": "11",
+      "name": "Tape",
+      "nameFa": "چسب نواری",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "On top of Cabinet A",
+      "locationFa": " بالای کابینت A",
+      "quantity": 1
+    },
+    {
+      "id": "12",
+      "name": "Whitex Spray",
+      "nameFa": "اسپری وایتکس",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "On top of Cabinet A",
+      "locationFa": " بالای کابینت A",
+      "quantity": 1
+    },
+    {
+      "id": "13",
+      "name": "Alcohol",
+      "nameFa": "الکل",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "On top of Cabinet A",
+      "locationFa": " بالای کابینت A",
+      "quantity": 1
+    },
+    {
+      "id": "14",
+      "name": "Super Glue",
+      "nameFa": "چسب دوقلو",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "On top of Cabinet A",
+      "locationFa": " بالای کابینت A",
+      "quantity": 1
+    },
+    {
+      "id": "15",
+      "name": "Paper Tape",
+      "nameFa": "چسب کاغذی",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "On top of Cabinet A",
+      "locationFa": " بالای کابینت A",
+      "quantity": 1
+    },
+    {
+      "id": "16",
+      "name": "Ketchup Sauce",
+      "nameFa": "سس کچاپ",
+      "category": "Food",
+      "categoryFa": "غذا",
+      "location": "On top of Cabinet B",
+      "locationFa": " بالای کابینت B",
+      "quantity": 1
+    },
+    {
+      "id": "17",
+      "name": "Tea",
+      "nameFa": "چای",
+      "category": "Food",
+      "categoryFa": "غذا",
+      "location": "On top of Cabinet B",
+      "locationFa": " بالای کابینت B",
+      "quantity": 1
+    },
+    {
+      "id": "18",
+      "name": "Maynoaise Sauce",  
+      "nameFa": "سس مایونز",
+      "category": "Food",
+      "categoryFa": "غذا",
+      "location": "On top of Cabinet B",
+      "locationFa": " بالای کابینت B",
+      "quantity": 1
+    },
+    {
+      "id": "19",
+      "name": "Vitamin C Tablets",
+      "nameFa": "قرص ویتامین C",
+      "category": "Food",
+      "categoryFa": "غذا",
+      "location": "On top of Cabinet B",
+      "locationFa": " بالای کابینت B",
+      "quantity": 1
+    },
+    {
+      "id": "20",
+      "name": "Spoon, Fork, Knife Set",
+      "nameFa": "بسته قاشق، چنگال و چاقو",
+      "category": "Food",
+      "categoryFa": "غذا",
+      "location": "On top of Cabinet B",
+      "locationFa": " بالای کابینت B",
+      "quantity": 7
+    },
+    {
+      "id": "21",
+      "name": "Kettle",
+      "nameFa": "کتری برقی",
+      "category": "Appliances",
+      "categoryFa": "لوازم خانگی",
+      "location": "On top of Cabinet B",
+      "locationFa": " بالای کابینت B",
+      "quantity": 1
+    },
+    {
+      "id": "22",
+      "name": "Whiteboard Markers",
+      "nameFa": "ماژیک وایت برد",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "On top of Cabinet B",
+      "locationFa": " بالای کابینت B",
+      "quantity": 1
+    },
+    {
+      "id": "23",
+      "name": "AA Battery",
+      "nameFa": "باتری قلمی",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "Mini Drawer",
+      "locationFa": "کشوی کوچک",
       "quantity": 4
     },
     {
-      "id": "715fcee5-30d3-4960-9294-449d45472842",
-      "name": "Teensy 4.1",
-      "nameFa": "تینزی ۴.۱",
-      "category": "Microcontrollers",
-      "categoryFa": "میکروکنترلرها",
-      "location": "Cabinet A, drawer 5",
-      "locationFa": "کابینت A، کشوی ۵",
+      "id": "24",
+      "name": "AAA Battery",
+      "nameFa": "باتری نیم قلمی",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "Mini Drawer",
+      "locationFa": "کشوی کوچک",
       "quantity": 3
     },
     {
-      "id": "e1616def-a042-471f-b9a8-c27f558bfad9",
-      "name": "USB-C cable 1 m",
-      "nameFa": "کابل USB-C یک متری",
-      "category": "Cables",
-      "categoryFa": "کابل‌ها",
-      "location": "Desk 3, cable box",
-      "locationFa": "میز ۳، جعبه کابل",
-      "quantity": 15
+      "id": "25",
+      "name": "Wire Fastener",
+      "nameFa": "بست سیم",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "Mini Drawer",
+      "locationFa": "کشوی کوچک",
+      "quantity": 5
+    },
+    {
+      "id": "26",
+      "name": "Stapler Ammo",
+      "nameFa": "خشاب منگنه",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "Mini Drawer",
+      "locationFa": "کشوی کوچک",
+      "quantity": 1
+    },
+    {
+      "id": "27",
+      "name": "Name Tag",
+      "nameFa": "برچسب نام",
+      "category": "Office Supplies",
+      "categoryFa": "لوازم اداری",
+      "location": "Mini Drawer",
+      "locationFa": "کشوی کوچک",
+      "quantity": 12
+    },
+    {
+      "id": "28",
+      "name": "Screwdriver",
+      "nameFa": "پیچ‌گوشتی",
+      "category": "Tools",
+      "categoryFa": "ابزارها",
+      "location": "Cabinet B, drawer 2",
+      "locationFa": "کابینت B، کشوی ۲",
+      "quantity": 1
+    },
+    {
+      "id": "29",
+      "name": "Pliers",
+      "nameFa": "انبردست/دم باریک",
+      "category": "Tools",
+      "categoryFa": "ابزارها",
+      "location": "Cabinet B, drawer 2",
+      "locationFa": "کابینت B، کشوی ۲",
+      "quantity": 1
+    },
+    {
+      "id": "30",
+      "name": "Hex Wrench",
+      "nameFa": "آچار آلن",
+      "category": "Tools",
+      "categoryFa": "ابزارها",
+      "location": "Cabinet B, drawer 2",
+      "locationFa": "کابینت B، کشوی ۲",
+      "quantity": 1
+    },
+    {
+      "id": "31",
+      "name": "Electrical Tape",
+      "nameFa": "چسب برق",
+      "category": "Tools",
+      "categoryFa": "ابزارها",
+      "location": "Cabinet B, drawer 2",
+      "locationFa": "کابینت B، کشوی ۲",
+      "quantity": 1
+    },
+    {
+      "id": "32",
+      "name": "Soldering Iron",
+      "nameFa": "هویه",
+      "category": "Tools",
+      "categoryFa": "ابزارها",
+      "location": "Cabinet B, drawer 2",
+      "locationFa": "کابینت B، کشوی ۲",
+      "quantity": 1
+    },
+    {
+      "id": "33",
+      "name": "Soldering Wire",
+      "nameFa": "سیم لحیم",
+      "category": "Tools",
+      "categoryFa": "ابزارها",
+      "location": "Cabinet B, drawer 2",
+      "locationFa": "کابینت B، کشوی ۲",
+      "quantity": 1
+    },
+    {
+      "id": "34",
+      "name": "Soldering Paste",
+      "nameFa": "خمیر لحیم",
+      "category": "Tools",
+      "categoryFa": "ابزارها",
+      "location": "Cabinet B, drawer 2",
+      "locationFa": "کابینت B، کشوی ۲",
+      "quantity": 1
+    },
+    {
+      "id": "35",
+      "name": "Multimeter",
+      "nameFa": "مولتی‌متر",
+      "category": "Tools",
+      "categoryFa": "ابزارها",
+      "location": "Cabinet B, drawer 2",
+      "locationFa": "کابینت B، کشوی ۲",
+      "quantity": 1
+    },
+    {
+      "id": "36",
+      "name": "Pixhawk",
+      "nameFa": "برد Pixhawk",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet B, drawer 3",
+      "locationFa": "کابینت B، کشوی ۳",
+      "quantity": 1
+    },
+    {
+      "id": "37",
+      "name": "T-Motor Motors",
+      "nameFa": "موتورهای T-Motor",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet B, drawer 3",
+      "locationFa": "کابینت B، کشوی ۳",
+      "quantity": 4
+    },
+    {
+      "id": "38",
+      "name": "T-Motor ESCs",
+      "nameFa": "کنترلرهای سرعت T-Motor",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet B, drawer 3",
+      "locationFa": "کابینت B، کشوی ۳",
+      "quantity": 1
+    },
+    {
+      "id": "39",
+      "name": "Autopilot Board",
+      "nameFa": "برد اتوپایلوت",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet B, drawer 3",
+      "locationFa": "کابینت B، کشوی ۳",
+      "quantity": 4
+    },
+    {
+      "id": "40",
+      "name": "Radio Control",
+      "nameFa": "رادیو کنترل",
+      "category": "Robots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet B, drawer 4",
+      "locationFa": "کابینت B، کشوی ۴",
+      "quantity": 4
+    },
+    {
+      "id": "41",
+      "name": "HDMI-to-HDMI Cable",
+      "nameFa": "کابل HDMI به HDMI",
+      "category": "Computer Accessories",
+      "categoryFa": "لوازم جانبی کامپیوتر",
+      "location": "Cabinet B, drawer 5",
+      "locationFa": "کابینت B، کشوی ۵",
+      "quantity": 1
+    },
+    {
+      "id": "42",
+      "name": "Joystick 2",
+      "nameFa": "دسته بازی ۲",
+      "category": "Computer Accessories",
+      "categoryFa": "لوازم جانبی کامپیوتر",
+      "location": "Cabinet B, drawer 5",
+      "locationFa": "کابینت B، کشوی ۵",
+      "quantity": 1
+    },
+    {
+      "id": "43",
+      "name": "Jetson Nano",
+      "nameFa": "برد Jetson Nano",
+      "category": "Computer Accessories",
+      "categoryFa": "لوازم جانبی کامپیوتر",
+      "location": "Cabinet B, drawer 5",
+      "locationFa": "کابینت B، کشوی ۵",
+      "quantity": 1
+    },
+    {
+      "id": "44",
+      "name": "Li-Ion Battery Pack",
+      "nameFa": "پک باتری",
+      "category": "ًRobots",
+      "categoryFa": "ربات‌ها",
+      "location": "Cabinet B, drawer 5",
+      "locationFa": "کابینت B، کشوی ۵",
+      "quantity": 4
+    },
+    {
+      "id": "45",
+      "name": "Li-Ion Battery Charger",
+      "nameFa": "شارژر باتری",
+      "category": "Computer Accessories",
+      "categoryFa": "لوازم جانبی کامپیوتر",
+      "location": "Cabinet B, drawer 5",
+      "locationFa": "کابینت B، کشوی ۵",
+      "quantity": 1
     }
   ]
 }
