@@ -1,7 +1,8 @@
 'use strict';
 
 const STORAGE_KEY = 'lab-inventory:v1:working-copy';
-const DATA_VERSION = 1;
+const DATA_VERSION = 2;
+const SUPPORTED_VERSIONS = new Set([1, 2]);
 const MAX_TEXT_LENGTH = 200;
 const FILENAME = 'inventory.json';
 
@@ -84,9 +85,10 @@ function cacheElements() {
     'notices', 'total-count', 'category-count', 'visible-count', 'save-state', 'saved-at',
     'search', 'category-filter', 'sort-field', 'sort-direction', 'add-button', 'export-button',
     'import-button', 'import-input', 'results-summary', 'item-body', 'item-dialog',
-    'item-dialog-title', 'item-form', 'item-id', 'item-name', 'item-category', 'item-location',
-    'item-quantity', 'form-error', 'item-submit', 'replace-dialog', 'replace-dialog-title',
-    'replace-dialog-message', 'replace-confirm', 'backup-button', 'category-options',
+    'item-dialog-title', 'item-form', 'item-id', 'item-name', 'item-name-fa', 'item-category',
+    'item-category-fa', 'item-location', 'item-location-fa', 'item-quantity', 'form-error',
+    'item-submit', 'replace-dialog', 'replace-dialog-title', 'replace-dialog-message',
+    'replace-confirm', 'backup-button', 'category-options', 'category-fa-options',
   ]) {
     elements[id] = document.getElementById(id);
   }
@@ -180,7 +182,20 @@ function validateId(value, label) {
   return value;
 }
 
-const ITEM_FIELDS = ['id', 'name', 'category', 'location', 'quantity'];
+function normalizeOptionalText(value, label) {
+  if (typeof value !== 'string') {
+    throw new ValidationError(`${label} must be text.`);
+  }
+  const trimmed = value.trim();
+  if (trimmed.length > MAX_TEXT_LENGTH) {
+    throw new ValidationError(`${label} must be ${MAX_TEXT_LENGTH} characters or fewer.`);
+  }
+  return trimmed;
+}
+
+const REQUIRED_ITEM_FIELDS = ['id', 'name', 'category', 'location', 'quantity'];
+const OPTIONAL_ITEM_FIELDS = ['nameFa', 'categoryFa', 'locationFa'];
+const ITEM_FIELDS = [...REQUIRED_ITEM_FIELDS, ...OPTIONAL_ITEM_FIELDS];
 
 function validateItem(raw, index) {
   const label = `Item ${index + 1}`;
@@ -188,7 +203,7 @@ function validateItem(raw, index) {
     throw new ValidationError(`${label} must be an object.`);
   }
 
-  const missing = ITEM_FIELDS.filter((field) => !Object.prototype.hasOwnProperty.call(raw, field));
+  const missing = REQUIRED_ITEM_FIELDS.filter((field) => !Object.prototype.hasOwnProperty.call(raw, field));
   if (missing.length > 0) {
     throw new ValidationError(`${label} is missing: ${missing.join(', ')}.`);
   }
@@ -202,13 +217,27 @@ function validateItem(raw, index) {
     throw new ValidationError(`${label} quantity must be a whole number of zero or more.`);
   }
 
-  return {
+  const item = {
     id: validateId(raw.id, `${label} id`),
     name: validateText(raw.name, `${label} name`),
     category: validateText(raw.category, `${label} category`),
     location: validateText(raw.location, `${label} location`),
     quantity: raw.quantity,
   };
+
+  const optionalLabels = {
+    nameFa: `${label} Persian name`,
+    categoryFa: `${label} Persian category`,
+    locationFa: `${label} Persian location`,
+  };
+
+  for (const [field, fieldLabel] of Object.entries(optionalLabels)) {
+    if (!Object.prototype.hasOwnProperty.call(raw, field)) continue;
+    const text = normalizeOptionalText(raw[field], fieldLabel);
+    if (text !== '') item[field] = text;
+  }
+
+  return item;
 }
 
 function validateInventory(raw) {
@@ -221,8 +250,8 @@ function validateInventory(raw) {
     throw new ValidationError(`The inventory has unknown field(s): ${unknown.join(', ')}.`);
   }
 
-  if (raw.version !== DATA_VERSION) {
-    throw new ValidationError(`The inventory version must be ${DATA_VERSION}.`);
+  if (!SUPPORTED_VERSIONS.has(raw.version)) {
+    throw new ValidationError('The inventory version is not supported. This page reads versions 1 and 2.');
   }
 
   if (!Array.isArray(raw.items)) {
@@ -254,8 +283,8 @@ function parseStoredCopy(raw) {
     if (!isPlainObject(data)) {
       throw new ValidationError('Stored data must be an object.');
     }
-    if (data.version !== DATA_VERSION) {
-      throw new ValidationError(`Stored data version must be ${DATA_VERSION}.`);
+    if (!SUPPORTED_VERSIONS.has(data.version)) {
+      throw new ValidationError('Stored data version is not supported.');
     }
     const items = validateInventory({ version: DATA_VERSION, items: data.items });
     return {
@@ -378,7 +407,7 @@ function persist() {
   state.savedAt = new Date().toISOString();
   const payload = {
     version: DATA_VERSION,
-    items: state.items,
+    items: state.items.map(canonicalItem),
     dirty: state.dirty,
     source: state.source,
     savedAt: state.savedAt,
@@ -407,6 +436,8 @@ function startEmptyInventory() {
   state.blockedReason = null;
   state.savedAt = new Date().toISOString();
   clearNotice('server');
+  clearNotice('exported');
+  clearNotice('imported');
   persist();
   render();
   showNotice('info', 'Started an empty inventory. Add items, then export when you are done.', {
@@ -432,18 +463,24 @@ function discardLocalCopy() {
 function handleItemSubmit(event) {
   event.preventDefault();
   const name = elements['item-name'].value.trim();
+  const nameFa = elements['item-name-fa'].value.trim();
   const category = elements['item-category'].value.trim();
+  const categoryFa = elements['item-category-fa'].value.trim();
   const location = elements['item-location'].value.trim();
+  const locationFa = elements['item-location-fa'].value.trim();
   const rawQuantity = elements['item-quantity'].value.trim();
   const editingId = elements['item-id'].value;
 
   const errors = [];
   if (name === '') errors.push('Name is required.');
   if (name.length > MAX_TEXT_LENGTH) errors.push(`Name must be ${MAX_TEXT_LENGTH} characters or fewer.`);
+  if (nameFa.length > MAX_TEXT_LENGTH) errors.push(`Persian name must be ${MAX_TEXT_LENGTH} characters or fewer.`);
   if (category === '') errors.push('Category is required.');
   if (category.length > MAX_TEXT_LENGTH) errors.push(`Category must be ${MAX_TEXT_LENGTH} characters or fewer.`);
+  if (categoryFa.length > MAX_TEXT_LENGTH) errors.push(`Persian category must be ${MAX_TEXT_LENGTH} characters or fewer.`);
   if (location === '') errors.push('Location is required.');
   if (location.length > MAX_TEXT_LENGTH) errors.push(`Location must be ${MAX_TEXT_LENGTH} characters or fewer.`);
+  if (locationFa.length > MAX_TEXT_LENGTH) errors.push(`Persian location must be ${MAX_TEXT_LENGTH} characters or fewer.`);
 
   let quantity = Number.NaN;
   if (rawQuantity === '') {
@@ -472,22 +509,39 @@ function handleItemSubmit(event) {
     item.category = category;
     item.location = location;
     item.quantity = quantity;
+    assignOptionalField(item, 'nameFa', nameFa);
+    assignOptionalField(item, 'categoryFa', categoryFa);
+    assignOptionalField(item, 'locationFa', locationFa);
   } else {
-    state.items.push({
+    const item = {
       id: createId(),
       name,
       category,
       location,
       quantity,
-    });
+    };
+    assignOptionalField(item, 'nameFa', nameFa);
+    assignOptionalField(item, 'categoryFa', categoryFa);
+    assignOptionalField(item, 'locationFa', locationFa);
+    state.items.push(item);
   }
 
   state.dirty = true;
   clearNotice('server');
+  clearNotice('exported');
+  clearNotice('imported');
   elements['item-dialog'].close();
   persist();
   render();
   announce(editingId ? `Saved changes to ${name}.` : `Added ${name}.`);
+}
+
+function assignOptionalField(item, field, value) {
+  if (value === '') {
+    delete item[field];
+  } else {
+    item[field] = value;
+  }
 }
 
 function deleteItem(id) {
@@ -501,6 +555,8 @@ function deleteItem(id) {
   state.items = state.items.filter((entry) => entry.id !== id);
   state.dirty = true;
   clearNotice('server');
+  clearNotice('exported');
+  clearNotice('imported');
   persist();
   render();
   announce(`Deleted ${item.name}.`);
@@ -583,6 +639,8 @@ function confirmReplacement() {
   elements['replace-dialog'].close();
   clearNotice('server');
   clearNotice('corrupt');
+  clearNotice('exported');
+  clearNotice('imported');
   persist();
   render();
 
@@ -608,6 +666,7 @@ function exportInventory() {
   state.dirty = false;
   persist();
   render();
+  clearNotice('imported');
   showNotice(
     'success',
     `Exported ${pluralize(state.items.length, 'item')}. Replace inventory.json in the repository with this file to publish the change.`,
@@ -616,8 +675,19 @@ function exportInventory() {
   announce('Inventory exported.');
 }
 
+function canonicalItem(item) {
+  const output = { id: item.id, name: item.name };
+  if (item.nameFa) output.nameFa = item.nameFa;
+  output.category = item.category;
+  if (item.categoryFa) output.categoryFa = item.categoryFa;
+  output.location = item.location;
+  if (item.locationFa) output.locationFa = item.locationFa;
+  output.quantity = item.quantity;
+  return output;
+}
+
 function downloadInventory(filename, items) {
-  downloadJson(filename, { version: DATA_VERSION, items });
+  downloadJson(filename, { version: DATA_VERSION, items: items.map(canonicalItem) });
 }
 
 function downloadRawBackup(raw) {
@@ -676,16 +746,36 @@ function renderCategoryOptions() {
     a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
   );
 
+  const persianByCategory = new Map();
+  for (const item of state.items) {
+    if (!persianByCategory.get(item.category) && item.categoryFa) {
+      persianByCategory.set(item.category, item.categoryFa);
+    }
+  }
+
   const previous = elements['category-filter'].value;
   const filter = elements['category-filter'];
   filter.replaceChildren(new Option('All categories', ''));
   for (const category of categories) {
-    filter.append(new Option(category, category));
+    const persian = persianByCategory.get(category);
+    filter.append(new Option(persian ? `${category} — ${persian}` : category, category));
   }
   filter.value = categories.includes(previous) ? previous : '';
 
   elements['category-options'].replaceChildren(
     ...categories.map((category) => {
+      const option = document.createElement('option');
+      option.value = category;
+      return option;
+    })
+  );
+
+  const persianCategories = [...new Set(
+    state.items.map((item) => item.categoryFa).filter((value) => Boolean(value))
+  )].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true }));
+
+  elements['category-fa-options'].replaceChildren(
+    ...persianCategories.map((category) => {
       const option = document.createElement('option');
       option.value = category;
       return option;
@@ -758,9 +848,9 @@ function renderRowsAndCounts() {
     const row = document.createElement('tr');
     row.dataset.id = item.id;
 
-    row.append(cellFor(item.name, 'name-cell'));
-    row.append(cellFor(item.category, 'category-cell'));
-    row.append(cellFor(item.location, 'location-cell'));
+    row.append(bilingualCell(item.name, item.nameFa, 'name-cell'));
+    row.append(bilingualCell(item.category, item.categoryFa, 'category-cell'));
+    row.append(bilingualCell(item.location, item.locationFa, 'location-cell'));
 
     const quantity = document.createElement('td');
     quantity.className = 'quantity-cell';
@@ -792,15 +882,29 @@ function renderRowsAndCounts() {
   tbody.append(fragment);
 }
 
-function cellFor(text, className) {
+function bilingualCell(primary, secondary, className) {
   const cell = document.createElement('td');
   cell.className = className;
-  cell.textContent = text;
+
+  const main = document.createElement('span');
+  main.className = 'value-primary';
+  main.textContent = primary;
+  cell.append(main);
+
+  if (secondary) {
+    const alt = document.createElement('span');
+    alt.className = 'value-secondary';
+    alt.lang = 'fa';
+    alt.dir = 'rtl';
+    alt.textContent = secondary;
+    cell.append(alt);
+  }
+
   return cell;
 }
 
 function getVisibleItems() {
-  const query = elements.search.value.trim().toLowerCase();
+  const query = normalizeForSearch(elements.search.value);
   const category = elements['category-filter'].value;
   const field = elements['sort-field'].value;
   const direction = elements['sort-direction'].value === 'desc' ? -1 : 1;
@@ -809,11 +913,15 @@ function getVisibleItems() {
   const filtered = state.items.filter((item) => {
     if (category && item.category !== category) return false;
     if (!query) return true;
-    return (
-      item.name.toLowerCase().includes(query) ||
-      item.category.toLowerCase().includes(query) ||
-      item.location.toLowerCase().includes(query)
-    );
+    const haystack = normalizeForSearch([
+      item.name,
+      item.nameFa,
+      item.category,
+      item.categoryFa,
+      item.location,
+      item.locationFa,
+    ].filter(Boolean).join(' '));
+    return haystack.includes(query);
   });
 
   return filtered.slice().sort((a, b) => {
@@ -881,8 +989,11 @@ function openItemDialog(id) {
   elements['item-dialog-title'].textContent = item ? 'Edit item' : 'Add item';
   elements['item-submit'].textContent = item ? 'Save changes' : 'Save item';
   elements['item-name'].value = item ? item.name : '';
+  elements['item-name-fa'].value = item && item.nameFa ? item.nameFa : '';
   elements['item-category'].value = item ? item.category : '';
+  elements['item-category-fa'].value = item && item.categoryFa ? item.categoryFa : '';
   elements['item-location'].value = item ? item.location : '';
+  elements['item-location-fa'].value = item && item.locationFa ? item.locationFa : '';
   elements['item-quantity'].value = item ? String(item.quantity) : '0';
 
   openDialog(elements['item-dialog']);
@@ -962,9 +1073,24 @@ function inventoriesEqual(a, b) {
   if (a.length !== b.length) return false;
   const normalize = (items) =>
     items
-      .map((item) => ({ id: item.id, name: item.name, category: item.category, location: item.location, quantity: item.quantity }))
+      .map(canonicalItem)
       .sort((left, right) => (left.id < right.id ? -1 : left.id > right.id ? 1 : 0));
   return JSON.stringify(normalize(a)) === JSON.stringify(normalize(b));
+}
+
+function normalizeForSearch(value) {
+  return String(value || '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[\u064B-\u065F\u0670]/g, '')
+    .replace(/[\u064A\u0649]/g, '\u06CC')
+    .replace(/\u0643/g, '\u06A9')
+    .replace(/\u0629/g, '\u0647')
+    .replace(/[\u200C\u0640]/g, '')
+    .replace(/[\u06F0-\u06F9]/g, (digit) => String(digit.charCodeAt(0) - 0x06F0))
+    .replace(/[\u0660-\u0669]/g, (digit) => String(digit.charCodeAt(0) - 0x0660))
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function pluralize(count, singular, plural = `${singular}s`) {

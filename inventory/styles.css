@@ -491,6 +491,16 @@ tbody tr:hover td {
   font-weight: 600;
 }
 
+.value-secondary {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: left;
+}
+
 .quantity-column,
 .quantity-cell {
   text-align: right;
@@ -549,6 +559,8 @@ tbody tr:hover td {
   color: var(--text);
   padding: 20px;
   width: min(560px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
@@ -575,13 +587,8 @@ tbody tr:hover td {
   gap: 14px;
 }
 
-.form-grid .field:first-child,
-.form-grid .field:nth-child(2) {
-  grid-column: span 2;
-}
-
-.form-grid .field:nth-child(3) {
-  grid-column: span 1;
+.form-grid .field-wide {
+  grid-column: 1 / -1;
 }
 
 .hint {
@@ -591,6 +598,14 @@ tbody tr:hover td {
 
 .required {
   color: var(--danger);
+}
+
+.optional {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .form-error {
@@ -677,9 +692,7 @@ tbody tr:hover td {
     grid-template-columns: 1fr;
   }
 
-  .form-grid .field:first-child,
-  .form-grid .field:nth-child(2),
-  .form-grid .field:nth-child(3) {
+  .form-grid .field-wide {
     grid-column: span 1;
   }
 }

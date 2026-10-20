@@ -1,46 +1,64 @@
 {
-  "version": 1,
+  "version": 2,
   "items": [
     {
       "id": "5dcf878b-12ae-4d19-8247-2239e5ef24d4",
       "name": "Hex socket head screw M3x10",
+      "nameFa": "پیچ آلن M3×10",
       "category": "Fasteners",
+      "categoryFa": "بست‌ها",
       "location": "Cabinet A, drawer 2",
+      "locationFa": "کابینت A، کشوی ۲",
       "quantity": 240
     },
     {
       "id": "0d0d4fb3-160e-4bec-9933-0adf67d84520",
       "name": "Jumper wire set (M-M, 20 cm)",
+      "nameFa": "مجموعه سیم جامپر (نری-نری، ۲۰ سانتی‌متر)",
       "category": "Electronics",
+      "categoryFa": "الکترونیک",
       "location": "Shelf B, bin 3",
+      "locationFa": "قفسه B، سبد ۳",
       "quantity": 12
     },
     {
       "id": "4f5604fa-660a-44bc-926e-e4852d7525d6",
       "name": "Digital multimeter",
+      "nameFa": "مولتی‌متر دیجیتال",
       "category": "Tools",
+      "categoryFa": "ابزارها",
       "location": "Workbench 1, top drawer",
+      "locationFa": "میز کار ۱، کشوی بالا",
       "quantity": 2
     },
     {
       "id": "6a88fa6c-d84e-4e15-9ccc-21a418eafddf",
       "name": "Li-Po battery 3S 5000 mAh",
+      "nameFa": "باتری لیتیوم-پلیمر 3S 5000 میلی‌آمپرساعت",
       "category": "Power",
+      "categoryFa": "برق و تغذیه",
       "location": "Fire cabinet, top shelf",
+      "locationFa": "کابینت ضدحریق، قفسه بالا",
       "quantity": 4
     },
     {
       "id": "715fcee5-30d3-4960-9294-449d45472842",
       "name": "Teensy 4.1",
+      "nameFa": "تینزی ۴.۱",
       "category": "Microcontrollers",
+      "categoryFa": "میکروکنترلرها",
       "location": "Cabinet A, drawer 5",
+      "locationFa": "کابینت A، کشوی ۵",
       "quantity": 3
     },
     {
       "id": "e1616def-a042-471f-b9a8-c27f558bfad9",
       "name": "USB-C cable 1 m",
+      "nameFa": "کابل USB-C یک متری",
       "category": "Cables",
+      "categoryFa": "کابل‌ها",
       "location": "Desk 3, cable box",
+      "locationFa": "میز ۳، جعبه کابل",
       "quantity": 15
     }
   ]

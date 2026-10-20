@@ -50,7 +50,7 @@
     <section class="toolbar" aria-label="Search, filter, and sort">
       <div class="field field-grow">
         <label for="search">Search</label>
-        <input type="search" id="search" placeholder="Name, category, or location" autocomplete="off">
+        <input type="search" id="search" placeholder="Name, category, or location — English or Persian" autocomplete="off">
       </div>
       <div class="field">
         <label for="category-filter">Category</label>
@@ -117,14 +117,26 @@
           <input id="item-name" name="name" type="text" maxlength="200" autocomplete="off" required>
         </div>
         <div class="field">
+          <label for="item-name-fa">Persian name <span class="optional">optional</span></label>
+          <input id="item-name-fa" name="nameFa" type="text" maxlength="200" autocomplete="off" lang="fa" dir="rtl" placeholder="نام فارسی">
+        </div>
+        <div class="field">
           <label for="item-category">Category <span class="required">*</span></label>
           <input id="item-category" name="category" type="text" maxlength="200" list="category-options" autocomplete="off" required>
+        </div>
+        <div class="field">
+          <label for="item-category-fa">Persian category <span class="optional">optional</span></label>
+          <input id="item-category-fa" name="categoryFa" type="text" maxlength="200" list="category-fa-options" autocomplete="off" lang="fa" dir="rtl" placeholder="دسته‌بندی فارسی">
         </div>
         <div class="field">
           <label for="item-location">Location <span class="required">*</span></label>
           <input id="item-location" name="location" type="text" maxlength="200" autocomplete="off" required>
         </div>
         <div class="field">
+          <label for="item-location-fa">Persian location <span class="optional">optional</span></label>
+          <input id="item-location-fa" name="locationFa" type="text" maxlength="200" autocomplete="off" lang="fa" dir="rtl" placeholder="مکان فارسی">
+        </div>
+        <div class="field field-wide">
           <label for="item-quantity">Quantity <span class="required">*</span></label>
           <input id="item-quantity" name="quantity" type="number" min="0" step="1" inputmode="numeric" required>
           <p class="hint">A whole number, zero or greater.</p>
@@ -156,6 +168,7 @@
   </dialog>
 
   <datalist id="category-options"></datalist>
+  <datalist id="category-fa-options"></datalist>
 
   <script src="app.js"></script>
 </body>
