@@ -1,4 +1,47 @@
 {
   "version": 1,
-  "items": []
+  "items": [
+    {
+      "id": "5dcf878b-12ae-4d19-8247-2239e5ef24d4",
+      "name": "Hex socket head screw M3x10",
+      "category": "Fasteners",
+      "location": "Cabinet A, drawer 2",
+      "quantity": 240
+    },
+    {
+      "id": "0d0d4fb3-160e-4bec-9933-0adf67d84520",
+      "name": "Jumper wire set (M-M, 20 cm)",
+      "category": "Electronics",
+      "location": "Shelf B, bin 3",
+      "quantity": 12
+    },
+    {
+      "id": "4f5604fa-660a-44bc-926e-e4852d7525d6",
+      "name": "Digital multimeter",
+      "category": "Tools",
+      "location": "Workbench 1, top drawer",
+      "quantity": 2
+    },
+    {
+      "id": "6a88fa6c-d84e-4e15-9ccc-21a418eafddf",
+      "name": "Li-Po battery 3S 5000 mAh",
+      "category": "Power",
+      "location": "Fire cabinet, top shelf",
+      "quantity": 4
+    },
+    {
+      "id": "715fcee5-30d3-4960-9294-449d45472842",
+      "name": "Teensy 4.1",
+      "category": "Microcontrollers",
+      "location": "Cabinet A, drawer 5",
+      "quantity": 3
+    },
+    {
+      "id": "e1616def-a042-471f-b9a8-c27f558bfad9",
+      "name": "USB-C cable 1 m",
+      "category": "Cables",
+      "location": "Desk 3, cable box",
+      "quantity": 15
+    }
+  ]
 }
