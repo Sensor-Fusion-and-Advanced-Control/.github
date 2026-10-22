@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lab Inventory</title>
-  <meta name="description" content="A simple, local-first inventory for the lab.">
+  <meta name="description" content="A simple, read-only inventory for the lab.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f766e'/%3E%3Cpath d='M18 24h28v22H18z' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M18 30h28M26 24v-6h12v6' fill='none' stroke='%23fff' stroke-width='4'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,12 +15,7 @@
     <div class="wrap header-inner">
       <div>
         <h1>Lab Inventory</h1>
-        <p class="subtitle">Parts and equipment for the lab. Your working copy stays in this browser.</p>
-      </div>
-      <div class="header-actions">
-        <button class="button secondary" id="import-button" type="button">Import JSON</button>
-        <button class="button" id="export-button" type="button">Export JSON</button>
-        <input id="import-input" type="file" accept=".json,application/json" hidden>
+        <p class="subtitle">Parts and equipment for the lab. This page is read-only.</p>
       </div>
     </div>
   </header>
@@ -41,16 +36,12 @@
         <span class="stat-value" id="visible-count">0</span>
         <span class="stat-label">shown</span>
       </div>
-      <div class="save-area">
-        <span class="badge" id="save-state">Loading…</span>
-        <span class="muted" id="saved-at"></span>
-      </div>
     </section>
 
     <section class="toolbar" aria-label="Search, filter, and sort">
       <div class="field field-grow">
         <label for="search">Search</label>
-        <input type="search" id="search" placeholder="Name, category, or location — English or Persian" autocomplete="off">
+        <input type="search" id="search" placeholder="Name, owner, category, or location — English or Persian" autocomplete="off">
       </div>
       <div class="field">
         <label for="category-filter">Category</label>
@@ -74,7 +65,6 @@
           <option value="desc">Descending</option>
         </select>
       </div>
-      <button class="button" id="add-button" type="button">Add item</button>
     </section>
 
     <p class="results-summary" id="results-summary" aria-live="polite"></p>
@@ -84,10 +74,10 @@
         <thead>
           <tr>
             <th scope="col">Name</th>
+            <th scope="col">Owner</th>
             <th scope="col">Category</th>
             <th scope="col">Location</th>
             <th scope="col" class="quantity-column">Quantity</th>
-            <th scope="col" class="actions-column"><span class="sr-only">Actions</span></th>
           </tr>
         </thead>
         <tbody id="item-body"></tbody>
@@ -95,80 +85,11 @@
     </section>
 
     <footer class="site-footer">
-      <p><strong>This browser is the working copy.</strong> Changes are saved to local storage on this device only. They do not sync to other devices or other people.</p>
-      <p><strong>inventory.json is the canonical file.</strong> Export your changes, then replace <code>inventory.json</code> in the repository to publish them. This page cannot write the file for you.</p>
+      <p><strong>This page is read-only.</strong> To change the inventory, edit <code>inventory.json</code> in the lab's GitHub repository and commit the change. The site updates after the change is deployed.</p>
       <p><strong>This site is public.</strong> Anyone who can open the repository or this page can read the inventory. Do not store sensitive information here.</p>
       <p class="muted small">Offline-first: no accounts, no analytics, no external requests.</p>
     </footer>
   </main>
-
-  <dialog class="dialog" id="item-dialog" aria-labelledby="item-dialog-title">
-    <form id="item-form" novalidate>
-      <div class="dialog-header">
-        <h2 id="item-dialog-title">Add item</h2>
-        <button class="icon-button" type="button" data-close-dialog aria-label="Close dialog">&times;</button>
-      </div>
-
-      <input type="hidden" id="item-id">
-
-      <div class="form-grid">
-        <div class="field">
-          <label for="item-name">Name <span class="required">*</span></label>
-          <input id="item-name" name="name" type="text" maxlength="200" autocomplete="off" required>
-        </div>
-        <div class="field">
-          <label for="item-name-fa">Persian name <span class="optional">optional</span></label>
-          <input id="item-name-fa" name="nameFa" type="text" maxlength="200" autocomplete="off" lang="fa" dir="rtl" placeholder="نام فارسی">
-        </div>
-        <div class="field">
-          <label for="item-category">Category <span class="required">*</span></label>
-          <input id="item-category" name="category" type="text" maxlength="200" list="category-options" autocomplete="off" required>
-        </div>
-        <div class="field">
-          <label for="item-category-fa">Persian category <span class="optional">optional</span></label>
-          <input id="item-category-fa" name="categoryFa" type="text" maxlength="200" list="category-fa-options" autocomplete="off" lang="fa" dir="rtl" placeholder="دسته‌بندی فارسی">
-        </div>
-        <div class="field">
-          <label for="item-location">Location <span class="required">*</span></label>
-          <input id="item-location" name="location" type="text" maxlength="200" autocomplete="off" required>
-        </div>
-        <div class="field">
-          <label for="item-location-fa">Persian location <span class="optional">optional</span></label>
-          <input id="item-location-fa" name="locationFa" type="text" maxlength="200" autocomplete="off" lang="fa" dir="rtl" placeholder="مکان فارسی">
-        </div>
-        <div class="field field-wide">
-          <label for="item-quantity">Quantity <span class="required">*</span></label>
-          <input id="item-quantity" name="quantity" type="number" min="0" step="1" inputmode="numeric" required>
-          <p class="hint">A whole number, zero or greater.</p>
-        </div>
-      </div>
-
-      <p class="form-error" id="form-error" role="alert" hidden></p>
-
-      <div class="dialog-actions">
-        <button class="button secondary" type="button" data-close-dialog>Cancel</button>
-        <button class="button" type="submit" id="item-submit">Save item</button>
-      </div>
-    </form>
-  </dialog>
-
-  <dialog class="dialog" id="replace-dialog" aria-labelledby="replace-dialog-title">
-    <div class="dialog-header">
-      <h2 id="replace-dialog-title">Replace working copy?</h2>
-      <button class="icon-button" type="button" data-close-dialog aria-label="Close dialog">&times;</button>
-    </div>
-    <p id="replace-dialog-message"></p>
-    <p class="warning-text">This replaces the inventory stored in this browser. It does not change <code>inventory.json</code> until you export and replace the file yourself.</p>
-    <div class="dialog-actions wrap-actions">
-      <button class="button secondary" type="button" id="backup-button">Download backup</button>
-      <span class="spacer"></span>
-      <button class="button secondary" type="button" data-close-dialog>Cancel</button>
-      <button class="button" type="button" id="replace-confirm">Replace</button>
-    </div>
-  </dialog>
-
-  <datalist id="category-options"></datalist>
-  <datalist id="category-fa-options"></datalist>
 
   <script src="app.js"></script>
 </body>

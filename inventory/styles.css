@@ -141,13 +141,6 @@ h1 {
   font-size: 0.95rem;
 }
 
-.header-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-}
-
 /* Buttons */
 
 .button {
@@ -182,48 +175,6 @@ h1 {
 
 .button.secondary:hover {
   background: var(--surface-soft);
-}
-
-.button.ghost {
-  background: transparent;
-  color: var(--muted);
-  border-color: transparent;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.button.danger {
-  background: transparent;
-  color: var(--danger);
-  border-color: transparent;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.button.danger:hover {
-  background: var(--danger-soft);
-}
-
-.button.small {
-  font-size: 0.82rem;
-  padding: 7px 10px;
-}
-
-.icon-button {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  border-radius: 6px;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 1.5rem;
-  line-height: 1;
-  padding: 2px 8px;
-}
-
-.icon-button:hover {
-  background: var(--surface-soft);
-  color: var(--text);
 }
 
 button:focus-visible,
@@ -263,43 +214,6 @@ main {
 .stat-label {
   color: var(--muted);
   font-size: 0.85rem;
-}
-
-.save-area {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.badge {
-  display: inline-block;
-  border-radius: 999px;
-  padding: 5px 11px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  border: 1px solid var(--border-strong);
-  background: var(--surface);
-  color: var(--muted);
-}
-
-.badge-ok {
-  background: var(--success-soft);
-  border-color: transparent;
-  color: var(--success);
-}
-
-.badge-dirty {
-  background: var(--warning-soft);
-  border-color: transparent;
-  color: var(--warning);
-}
-
-.badge-blocked {
-  background: var(--danger-soft);
-  border-color: transparent;
-  color: var(--danger);
 }
 
 .muted {
@@ -430,11 +344,6 @@ input::placeholder {
   opacity: 0.8;
 }
 
-.toolbar .button {
-  padding-top: 11px;
-  padding-bottom: 11px;
-}
-
 .results-summary {
   color: var(--muted);
   font-size: 0.85rem;
@@ -507,17 +416,6 @@ tbody tr:hover td {
   width: 100px;
 }
 
-.actions-column,
-.actions-cell {
-  text-align: right;
-  width: 150px;
-  white-space: nowrap;
-}
-
-.actions-cell .button + .button {
-  margin-left: 2px;
-}
-
 .empty-cell {
   padding: 48px 20px !important;
   text-align: center;
@@ -550,98 +448,6 @@ tbody tr:hover td {
   font-weight: 600;
 }
 
-/* Dialog */
-
-.dialog {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--surface);
-  color: var(--text);
-  padding: 20px;
-  width: min(560px, calc(100vw - 32px));
-  max-height: calc(100vh - 32px);
-  overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-}
-
-.dialog::backdrop {
-  background: rgba(10, 16, 22, 0.55);
-}
-
-.dialog-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.dialog-header h2 {
-  font-size: 1.15rem;
-  letter-spacing: -0.01em;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.form-grid .field-wide {
-  grid-column: 1 / -1;
-}
-
-.hint {
-  color: var(--muted);
-  font-size: 0.78rem;
-}
-
-.required {
-  color: var(--danger);
-}
-
-.optional {
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
-}
-
-.form-error {
-  margin-top: 14px;
-  background: var(--danger-soft);
-  color: var(--danger);
-  border-radius: 6px;
-  padding: 9px 11px;
-  font-size: 0.86rem;
-}
-
-.dialog-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.dialog-actions.wrap-actions {
-  flex-wrap: wrap;
-}
-
-.spacer {
-  flex: 1;
-}
-
-.warning-text {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 0.86rem;
-}
-
-#replace-dialog-message {
-  font-size: 0.95rem;
-}
-
 /* Responsive */
 
 @media (max-width: 760px) {
@@ -650,17 +456,8 @@ tbody tr:hover td {
     align-items: stretch;
   }
 
-  .header-actions .button {
-    flex: 1;
-  }
-
   .summary {
     gap: 16px;
-  }
-
-  .save-area {
-    margin-left: 0;
-    width: 100%;
   }
 
   .toolbar {
@@ -673,27 +470,6 @@ tbody tr:hover td {
 
   .field-grow {
     flex-basis: 100%;
-  }
-
-  .toolbar .button {
-    flex: 1 1 100%;
-  }
-
-  .actions-column,
-  .actions-cell {
-    width: 128px;
-  }
-
-  .actions-cell .button {
-    padding: 7px 6px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-grid .field-wide {
-    grid-column: span 1;
   }
 }
 
